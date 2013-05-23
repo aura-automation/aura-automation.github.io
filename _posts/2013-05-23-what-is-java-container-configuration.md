@@ -76,7 +76,7 @@ Therefore if you like to keep things simple and you prefer the command-line over
 - Ability to host freely on GitHub Pages.
 - No database required.
 
-What is Configuration
+### What is Java Container Configuration
 
 JEE Containers like WebSphere have hundreds of configurable objects. These configurable objects can be grouped as defined below.
 
