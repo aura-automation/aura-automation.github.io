@@ -149,7 +149,8 @@ Attribute values that differ across the environments are tokenised.
 
 These Resource files along with source and binaries are version controlled and released as holistic a Java Container environment for the application.
 
-[[http://images.centauros-solutions.co.uk/singletool.jpg]]
+
+![Single Tool](/images/singletool.jpg "Aura for all environments")
   
 **Thank you** for reading this far.
 
