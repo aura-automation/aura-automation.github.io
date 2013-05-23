@@ -1,8 +1,8 @@
 ---
 layout: post
-category : lessons
-tagline: "Supporting tagline"
-tags : [intro, beginner, jekyll, tutorial]
+category : blogs
+tagline: "Automate Configuration"
+tags : [config mangement, automation, websphere, aura]
 ---
 {% include JB/setup %}
 
@@ -80,7 +80,7 @@ Therefore if you like to keep things simple and you prefer the command-line over
 
 JEE Containers like WebSphere have hundreds of configurable objects. These configurable objects can be grouped as defined below.
 
-[Image]
+[[images/configurationdefination.jpg]]
 
 Each group will have an author who is the team that defines these objects.
 
@@ -149,6 +149,7 @@ Attribute values that differ across the environments are tokenised.
 
 These Resource files along with source and binaries are version controlled and released as holistic a Java Container environment for the application.
 
+[[images/singletool.jpg]]
   
 **Thank you** for reading this far.
 
