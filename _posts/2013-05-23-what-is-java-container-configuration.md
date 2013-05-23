@@ -149,7 +149,7 @@ Attribute values that differ across the environments are tokenised.
 
 These Resource files along with source and binaries are version controlled and released as holistic a Java Container environment for the application.
 
-[[images/singletool.jpg]]
+[[/images/singletool.jpg]]
   
 **Thank you** for reading this far.
 
