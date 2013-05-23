@@ -2,7 +2,7 @@
 layout: post
 category : blogs
 tagline: "Automate Configuration"
-tags : [automation, websphere, aura]
+tags : [automation, websphere]
 ---
 {% include JB/setup %}
 
@@ -81,7 +81,6 @@ Therefore if you like to keep things simple and you prefer the command-line over
 JEE Containers like WebSphere have hundreds of configurable objects. These configurable objects can be grouped as defined below.
    
    
-
 ![Configuration](/images/configurationdefination.jpg "JEE Container Configuration")
 
 Each group will have an author who is the team that defines these objects.
