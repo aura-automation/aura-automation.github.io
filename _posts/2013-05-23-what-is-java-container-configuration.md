@@ -82,7 +82,6 @@ JEE Containers like WebSphere have hundreds of configurable objects. These confi
    
    
 
-[[http://images.centauros-solutions.co.uk/configurationdefination.jpg]]
 ![Configuration](/images/configurationdefination.jpg "JEE Container Configuration")
 
 Each group will have an author who is the team that defines these objects.
