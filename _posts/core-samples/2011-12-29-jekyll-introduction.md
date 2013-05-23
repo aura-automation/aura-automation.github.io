@@ -6,48 +6,62 @@ tags : [intro, beginner, jekyll, tutorial]
 ---
 {% include JB/setup %}
 
-This Jekyll introduction will outline specifically  what Jekyll is and why you would want to use it.
-Directly following the intro we'll learn exactly _how_ Jekyll does what it does.
+This introduction to Aura will outline defination of Java Container Configuraion and how can you can use Aura to automate this configuration.
 
 ## Overview 
 
-### What is Jekyll?
+Application Release Automation is the process of scripting application releases to remove manual tasks.
 
-Jekyll is a parsing engine bundled as a ruby gem used to build static websites from
-dynamic components such as templates, partials, liquid code, markdown, etc. Jekyll is known as "a simple, blog aware, static site generator".
+This approach delivers efficiency, quality and financial benefits.
 
-### Examples
+Automation enables consistent delivery of accurate configuration across multiple environments reducing the resource overhead of the activity.
 
-This website is created with Jekyll. [Other Jekyll websites](https://github.com/mojombo/jekyll/wiki/Sites).
+It can ensure that environments are configured accurately underpinning testing and reducing wasted effort in analysing and resolving defects related to mis-configuration.
+
+Functions that can be automated are deployment of an application, configuring server containers and other application components such as database components and messaging components. By scripting Application Release, you can apply the same configuration to a single or multiple nodes consistently.
+
+In this article I am going to focus on JEE application container configuration specifically on WebSphere Application Server.
+
+You can describe configuration as a script or set of scripts used to ensure that environments are replicated, removing the potential for manual error in the release process.
 
 
+### Script Driven vs. Data Driven Automation
 
-### What does Jekyll Do?
+Automation brings agility to both development and operations by enabling any authorised team member to release through the modification of scripts through a controlled release process (i.e. version control and change management).
 
-Jekyll is a ruby gem you install on your local system.
-Once there you can call `jekyll --server` on a directory and provided that directory
-is setup in a way jekyll expects, it will do magic stuff like parse markdown/textile files, 
-compute categories, tags, permalinks, and construct your pages from layout templates and partials.
+However scripting application configuration on application servers like WebSphere can be time consuming and error prone.
 
-Once parsed, Jekyll stores the result in a self-contained static `_site` folder.
-The intention here is that you can serve all contents in this folder statically from a plain static web-server.
+It also requires specialist product knowledge.
 
-You can think of Jekyll as a normalish dynamic blog but rather than parsing content, templates, and tags
-on each request, Jekyll does this once _beforehand_ and caches the _entire website_ in a folder for serving statically.
+Script-driven automation results in a non-extendable solution. This means the addition of new automation for new configuration objects which is time consuming due to duplication of effort with development teams. This often involves writing of scripts for different application to automate same configuration objects.
 
-### Jekyll is Not Blogging Software
+An alternative to script driven model is data driven automation. Data driven automation is implemented by a generic tool/engine that accepts configuration as data. This data is environment agnostic therefore can configure any environment using a generic and consistent mechanism.
 
-**Jekyll is a parsing engine.**
+### Aura is Data Driven 
 
-Jekyll does not come with any content nor does it have any templates or design elements.
-This is a common source of confusion when getting started.
-Jekyll does not come with anything you actually use or see on your website - you have to make it.
+Aura is free open source offering that uses data driven automation removing the need to write scripts whilst retaining your capability to define your WebSphere configuration.
 
-### Why Should I Care?
+Aura can be used in cloud, virtual and physical environments.
 
-Jekyll is very minimalistic and very efficient.
-The most important thing to realize about Jekyll is that it creates a static representation of your website requiring only a static web-server.
-Traditional dynamic blogs like Wordpress require a database and server-side code.
+In this article, I'll focus on the using Aura for WebSphere Configuration automation.
+
+You will learn the high level concepts of the tool and gain an understanding on how you can simply configuration tasks in your environment.
+
+In future articles I will dive deeper in to more detailed concepts
+
+Aura uses Java programing language and Java API to interface with WebSphere environments.
+
+Aura represents WebSphere Configuration, such as DataSource, JMS Queues, JVM, as Resources. These Resources are expressed in XML files called Resource XML.
+
+Relationship between the resources is captured using the XML tree hierarchy. Values in Resource XML files are tokenised to make these files environment agnostic.
+
+Aura is packaged as ANT tasks and comes with a quick start ANT script to enable quick set up. This can be extended and built up to integrate to your binary repository.
+
+### What is Aura and Why Should I care?
+
+Aura is very minimalistic and very efficient.
+The most important thing to realize about Aura  is that it creates a simple xml representation of your config without requiring heavy tools.
+Traditional/Commercial tools require a database, server-side code, UI which is self defeating when you want rapid time to market.
 Heavily trafficked dynamic blogs must employ a caching layer that ultimately performs the same job Jekyll sets out to do; serve static content.
 
 Therefore if you like to keep things simple and you prefer the command-line over an admin panel UI then give Jekyll a try.
@@ -62,351 +76,81 @@ Therefore if you like to keep things simple and you prefer the command-line over
 - Ability to host freely on GitHub Pages.
 - No database required.
 
-# How Jekyll Works
+What is Configuration
 
-The following is a complete but concise outline of exactly how Jekyll works.
+JEE Containers like WebSphere have hundreds of configurable objects. These configurable objects can be grouped as defined below.
 
-Be aware that core concepts are introduced in rapid succession without code examples.
-This information is not intended to specifically teach you how to do anything, rather it
-is intended to give you the _full picture_ relative to what is going on in Jekyll-world.
+[Image]
 
-Learning these core concepts should help you avoid common frustrations and ultimately 
-help you better understand the code examples contained throughout Jekyll-Bootstrap.
+Each group will have an author who is the team that defines these objects.
 
+**Infrastructure Configuration
 
-## Initial Setup
+These objects are typically configured by WebSphere Administrators. Developers are not allowed to change these.
 
-After [installing jekyll](/index.html#start-now) you'll need to format your website directory in a way jekyll expects.
-Jekyll-bootstrap conveniently provides the base directory format.
+Examples of these configurations are;
 
-### The Jekyll Application Base Format
+    Security Configurations. E.g. SSL key to connect to nodeagents
 
-Jekyll expects your website directory to be laid out like so:
+    LDAP Server
 
-    .
-    |-- _config.yml
-    |-- _includes
-    |-- _layouts
-    |   |-- default.html
-    |   |-- post.html
-    |-- _posts
-    |   |-- 2011-10-25-open-source-is-good.markdown
-    |   |-- 2011-04-26-hello-world.markdown
-    |-- _site
-    |-- index.html
-    |-- assets
-        |-- css
-            |-- style.css
-        |-- javascripts
+    LDAP Server Configuration
 
 
-- **\_config.yml**  
-	Stores configuration data.
+WebSphere Administrators will be the author for this group.
 
-- **\_includes**  
-	This folder is for partial views.
+**Application Container Configuration
 
-- **\_layouts**   
-	This folder is for the main templates your content will be inserted into.
-	You can have different layouts for different pages or page sections.
+These objects are configured on containers and used by applications at run time.
 
-- **\_posts**  
-	This folder contains your dynamic content/posts.
-	the naming format is required to be `@YEAR-MONTH-DATE-title.MARKUP@`.
+J2EE spec externalises these configurations to make an application portable .
 
-- **\_site**  
-	This is where the generated site will be placed once Jekyll is done transforming it. 
+Examples of these configurations are;
 
-- **assets**  
-	This folder is not part of the standard jekyll structure.
-	The assets folder represents _any generic_ folder you happen to create in your root directory.
-	Directories and files not properly formatted for jekyll will be left untouched for you to serve normally.
+    DataSources,
 
-(read more: <https://github.com/mojombo/jekyll/wiki/Usage>)
+    Properties,
 
+    MQ,
 
-### Jekyll Configuration
+    JMS
 
-Jekyll supports various configuration options that are fully outlined here:
-<https://github.com/mojombo/jekyll/wiki/Configuration>
+Each application can have a unique set of objects with configuration.
 
+The Development team will be author for this group.
 
+Some data might be authored by Database administrators/owners, MQ administrators/owners, or other back end system administrators/owners
 
+**Application Configuration
 
-## Content in Jekyll
+These objects are configured on application level and are applied at the EAR level.
 
-Content in Jekyll is either a post or a page.
-These content "objects" get inserted into one or more templates to build the final output for its respective static-page.
+Examples of these configurations are;
 
-### Posts and Pages
+    Security Role Mappings,
 
-Both posts and pages should be written in markdown, textile, or HTML and may also contain Liquid templating syntax.
-Both posts and pages can have meta-data assigned on a per-page basis such as title, url path, as well as arbitrary custom meta-data.
+    Resource Reference Mapping
 
-### Working With Posts
+    Shared Library Binding
 
-**Creating a Post**   
-Posts are created by properly formatting a file and placing it the `_posts` folder.
+The Development team will be author for this group. 
 
-**Formatting**  
-A post must have a valid filename in the form `YEAR-MONTH-DATE-title.MARKUP` and be placed in the `_posts` directory. 
-If the data format is invalid Jekyll will not recognize the file as a post. The date and title are automatically parsed from the filename of the post file.
-Additionally, each file must have [YAML Front-Matter](https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter) prepended to its content.
-YAML Front-Matter is a valid YAML syntax specifying meta-data for the given file.
+# Configuration Data in Aura
 
-**Order**  
-Ordering is an important part of Jekyll but it is hard to specify a custom ordering strategy.
-Only reverse chronological and chronological ordering is supported in Jekyll.
+Configuration data in Aura is represented in XML file called as Resource.xml.
 
-Since the date is hard-coded into the filename format, to change the order, you must change the dates in the filenames.
+Authors can either write these files manually or extract them from an environment using the extract feature in Aura.
 
-**Tags**   
-Posts can have tags associated with them as part of their meta-data.
-Tags may be placed on posts by providing them in the post's YAML front matter.
-You have access to the post-specific tags in the templates. These tags also get added to the sitewide collection.
+Authors can group multiple configuration objects in a single Resource file, e.g. JDBC Provider, DataSources and JAAS Alias.
 
-**Categories**   
-Posts may be categorized by providing one or more categories in the YAML front matter.
-Categories offer more significance over tags in that they can be reflected in the URL path to the given post.
-Note categories in Jekyll work in a specific way.
-If you define more than one category you are defining a category hierarchy "set".
-Example:
+Similarly JMS Queue Connection Factory and Queue can be grouped into one file.
 
-    ---
-    title :  Hello World
-    categories : [lessons, beginner]
-    ---
+Attribute values that differ across the environments are tokenised.
 
-This defines the category hierarchy "lessons/beginner". Note this is _one category_ node in Jekyll.
-You won't find "lessons" and "beginner" as two separate categories unless you define them elsewhere as singular categories.
+These Resource files along with source and binaries are version controlled and released as holistic a Java Container environment for the application.
 
-### Working With Pages
-
-**Creating a Page**  
-Pages are created by properly formatting a file and placing it anywhere in the root directory or subdirectories that do _not_ start with an underscore.
-
-**Formatting**  
-In order to register as a Jekyll page the file must contain [YAML Front-Matter](https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter).
-Registering a page means 1) that Jekyll will process the page and 2) that the page object will be available in the `site.pages` array for inclusion into your templates.
-
-**Categories and Tags**  
-Pages do not compute categories nor tags so defining them will have no effect.
-
-**Sub-Directories**  
-If pages are defined in sub-directories, the path to the page will be reflected in the url.
-Example:
-
-    .
-    |-- people
-        |-- bob
-            |-- essay.html
-
-This page will be available at `http://yourdomain.com/people/bob/essay.html`
-
-
-**Recommended Pages**  
-
-- **index.html**  
-  You will always want to define the root index.html page as this will display on your root URL.
-- **404.html**  
-  Create a root 404.html page and GitHub Pages will serve it as your 404 response.
-- **sitemap.html**  
-  Generating a sitemap is good practice for SEO.
-- **about.html**  
-  A nice about page is easy to do and gives the human perspective to your website.
-
-
-## Templates in Jekyll
-
-Templates are used to contain a page's or post's content.
-All templates have access to a global site object variable: `site` as well as a page object variable: `page`.
-The site variable holds all accessible content and metadata relative to the site.
-The page variable holds accessible data for the given page or post being rendered at that point.
-
-**Create a Template**  
-Templates are created by properly formatting a file and placing it in the `_layouts` directory.
-
-**Formatting**  
-Templates should be coded in HTML and contain YAML Front Matter. 
-All templates can contain Liquid code to work with your site's data.
-
-**Rending Page/Post Content in a Template**  
-There is a special variable in all templates named : `content`.
-The `content` variable holds the page/post content including any sub-template content previously defined.
-Render the content variable wherever you want your main content to be injected into your template:
-
-{% capture text %}...
-<body>
-  <div id="sidebar"> ... </div>
-  <div id="main">
-    |.{content}.|
-  </div>
-</body>
-...{% endcapture %}
-{% include JB/liquid_raw %}
-
-### Sub-Templates
-
-Sub-templates are exactly templates with the only difference being they 
-define another "root" layout/template within their YAML Front Matter.
-This essentially means a template will render inside of another template.
-
-### Includes
-In Jekyll you can define include files by placing them in the `_includes` folder.
-Includes are NOT templates, rather they are just code snippets that get included into templates.
-In this way, you can treat the code inside includes as if it was native to the parent template.
-
-Any valid template code may be used in includes.
-
-
-## Using Liquid for Templating
-
-Templating is perhaps the most confusing and frustrating part of Jekyll.
-This is mainly due to the fact that Jekyll templates must use the Liquid Templating Language.
-
-### What is Liquid?
-
-[Liquid](https://github.com/Shopify/liquid) is a secure templating language developed by [Shopify](http://shopify.com).
-Liquid is designed for end-users to be able to execute logic within template files 
-without imposing any security risk on the hosting server.
-
-Jekyll uses Liquid to generate the post content within the final page layout structure and as the primary interface for working with
-your site and post/page data. 
-
-### Why Do We Have to Use Liquid?
-
-GitHub uses Jekyll to power [GitHub Pages](http://pages.github.com/). 
-GitHub cannot afford to run arbitrary code on their servers so they lock developers down via Liquid.
-
-### Liquid is Not Programmer-Friendly.
-
-The short story is liquid is not real code and its not intended to execute real code.
-The point being you can't do jackshit in liquid that hasn't been allowed explicitly by the implementation.
-What's more you can only access data-structures that have been explicitly passed to the template. 
-
-In Jekyll's case it is not possible to alter what is passed to Liquid without hacking the gem or running custom plugins. 
-Both of which cannot be supported by GitHub Pages.
-
-As a programmer - this is very frustrating.
-
-But rather than look a gift horse in the mouth we are going to 
-suck it up and view it as an opportunity to work around limitations and adopt client-side solutions when possible.
-
-**Aside**   
-My personal stance is to not invest time trying to hack liquid. It's really unnecessary
-_from a programmer's_ perspective. That is to say if you have the ability to run custom plugins (i.e. run arbitrary ruby code)
-you are better off sticking with ruby. Toward that end I've built [Mustache-with-Jekyll](http://github.com/plusjade/mustache-with-jekyll)
-
-
-## Static Assets
-
-Static assets are any file in the root or non-underscored subfolders that are not pages.
-That is they have no valid YAML Front Matter and are thus not treated as Jekyll Pages.
-
-Static assets should be used for images, css, and javascript files. 
-
-
-
-
-## How Jekyll Parses Files
-
-Remember Jekyll is a processing engine. There are two main types of parsing in Jekyll.
-
-- **Content parsing.**   
-	This is done with textile or markdown.
-- **Template parsing.**   
-  This is done with the liquid templating language.
-
-And thus there are two main types of file formats needed for this parsing.
-
-- **Post and Page files.**  
-  All content in Jekyll is either a post or a page so valid posts and pages are parsed with markdown or textile.
-- **Template files.**    
-	These files go in `_layouts` folder and contain your blogs **templates**. They should be made in HTML with the help of Liquid syntax.
-	Since include files are simply injected into templates they are essentially parsed as if they were native to the template.
-
-**Arbitrary files and folders.**   
-Files that _are not_ valid pages are treated as static content and pass through 
-Jekyll untouched and reside on your blog in the exact structure and format they originally existed in.
-
-### Formatting Files for Parsing.
-
-We've outlined the need for valid formatting using **YAML Front Matter**.
-Templates, posts, and pages all need to provide valid YAML Front Matter even if the Matter is empty.
-This is the only way Jekyll knows you want the file processed.
-
-YAML Front Matter must be prepended to the top of template/post/page files:
-
-    ---
-    layout: post
-    category : pages
-    tags : [how-to, jekyll]
-    ---
-
-    ... contents ...
-
-Three hyphens on a new line start the Front-Matter block and three hyphens on a new line end the block.
-The data inside the block must be valid YAML.
-
-Configuration parameters for YAML Front-Matter is outlined here:
-[A comprehensive explanation of YAML Front Matter](https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter)
-
-#### Defining Layouts for Posts and Templates Parsing.
-
-The `layout` parameter in the YAML Front Matter defines the template file for which the given post or template should be injected into.
-If a template file specifies its own layout, it is effectively being used as a `sub-template.`
-That is to say loading a post file into a template file that refers to another template file with work in the way you'd expect; as a nested sub-template.
-
-
-
-
-
-## How Jekyll Generates the Final Static Files.
-
-Ultimately, Jekyll's job is to generate a static representation of your website. 
-The following is an outline of how that's done:
-
-1. **Jekyll collects data.**   
-  Jekyll scans the posts directory and collects all posts files as post objects. It then scans the layout assets and collects those and finally scans other directories in search of pages.
-
-2. **Jekyll computes data.**   
-  Jekyll takes these objects, computes metadata (permalinks, tags, categories, titles, dates) from them and constructs one 
-  big `site` object that holds all the posts, pages, layouts, and respective metadata.
-  At this stage your site is one big computed ruby object.
-
-3. **Jekyll liquifies posts and templates.**  
-  Next jekyll loops through each post file and converts (through markdown or textile) and **liquifies** the post inside of its respective layout(s).
-  Once the post is parsed and liquified inside the the proper layout structure, the layout itself is "liquified".   
-	**Liquification** is defined as follows: Jekyll initiates a Liquid template, and passes a simpler hash representation of the ruby site object as well as a simpler
-  hash representation of the ruby post object. These simplified data structures are what you have access to in the templates.
-	
-3. **Jekyll generates output.**   
-	Finally the liquid templates are "rendered", thereby processing any liquid syntax provided in the templates
-	and saving the final, static representation of the file.
- 
-**Notes.**  
-Because Jekyll computes the entire site in one fell swoop, each template is given access to 
-a global `site` hash that contains useful data. It is this data that you'll iterate through and format 
-using the Liquid tags and filters in order to render it onto a given page.
-
-Remember, in Jekyll you are an end-user. Your API has only two components:
-
-1. The manner in which you setup your directory.
-2. The liquid syntax and variables passed into the liquid templates.
-
-All the data objects available to you in the templates via Liquid are outlined in the **API Section** of Jekyll-Bootstrap.
-You can also read the original documentation here: <https://github.com/mojombo/jekyll/wiki/Template-Data>
-
-## Conclusion
-
-I hope this paints a clearer picture of what Jekyll is doing and why it works the way it does.
-As noted, our main programming constraint is the fact that our API is limited to what is accessible via Liquid and Liquid only.
-
-Jekyll-bootstrap is intended to provide helper methods and strategies aimed at making it more intuitive and easier to work with Jekyll =)
-
+  
 **Thank you** for reading this far.
 
 ## Next Steps
 
-Please take a look at [{{ site.categories.api.first.title }}]({{ BASE_PATH }}{{ site.categories.api.first.url }}) 
-or jump right into [Usage]({{ BASE_PATH }}{{ site.categories.usage.first.url }}) if you'd like.
