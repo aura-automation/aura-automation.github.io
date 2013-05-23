@@ -2,7 +2,7 @@
 layout: post
 category : blogs
 tagline: "Automate Configuration"
-tags : [config mangement, automation, websphere, aura]
+tags : [automation, websphere, aura]
 ---
 {% include JB/setup %}
 
@@ -79,8 +79,11 @@ Therefore if you like to keep things simple and you prefer the command-line over
 ### What is Java Container Configuration
 
 JEE Containers like WebSphere have hundreds of configurable objects. These configurable objects can be grouped as defined below.
+   
+   
 
 [[http://images.centauros-solutions.co.uk/configurationdefination.jpg]]
+![Configuration](/images/configurationdefination.jpg "JEE Container Configuration")
 
 Each group will have an author who is the team that defines these objects.
 
@@ -148,8 +151,8 @@ Similarly JMS Queue Connection Factory and Queue can be grouped into one file.
 Attribute values that differ across the environments are tokenised.
 
 These Resource files along with source and binaries are version controlled and released as holistic a Java Container environment for the application.
-
-
+   
+   
 ![Single Tool](/images/singletool.jpg "Aura for all environments")
   
 **Thank you** for reading this far.
