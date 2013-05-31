@@ -5,24 +5,19 @@ next_section: installation
 permalink: /docs/home/
 ---
 
-This site aims to be a comprehensive guide to Jekyll. We’ll cover topics such
-as getting your site up and running, creating and managing your content,
-customizing the way your site works and looks, deploying to various
+This site aims to be a comprehensive guide to Aura. We’ll cover topics such
+as getting your Aura Installed, creating and managing your configuration,
+extracting configuratoin from know WebSphere environment, deploying EAR/WAR to various
 environments, and give you some advice on participating in the future
-development of Jekyll itself.
+development of Aura itself.
 
-## So what is Jekyll, exactly?
+## So what is Aura, exactly?
 
-Jekyll is a simple, blog-aware, static site generator. It takes a template
-directory containing raw text files in various formats, runs it through
-[Markdown](http://daringfireball.net/projects/markdown/) (or
-[Textile](http://textile.sitemonks.com/)) and
-[Liquid](http://wiki.shopify.com/Liquid)
-converters, and spits out a complete, ready-to-publish static website suitable
-for serving with your favorite web server. Jekyll also happens to be the engine
-behind [GitHub Pages](http://pages.github.com), which means you can use Jekyll
-to host your project’s page, blog, or website from GitHub’s servers **for
-free**.
+Aura uses Java programing language and Java API to interface with WebSphere environments.
+Aura represents WebSphere Configuration, such as DataSource, JMS Queues, JVM, as Resources. These Resources are expressed in XML files called Resource XML.
+Relationship between the resources is captured using the XML tree hierarchy. Values in Resource XML files are tokenised to make these files environment agnostic.
+Aura is packaged as ANT tasks and comes with a quick start ANT script to enable quick set up. This can be extended and built up to integrate to your binary repository.
+Aura is free open source offering that uses data driven automation removing the need to write scripts whilst retaining your capability to define your WebSphere configuration.
 
 ## Quick-start guide
 
