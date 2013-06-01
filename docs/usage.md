@@ -17,7 +17,8 @@ You can enter the name of any resource.
 For e.g. DataSource if you want to extract the datasources. 
 
 Result of the extract is an xml and html file. 
-XML file is generated in resources/output/<datetime> folder and html is in resources/reports/<datetime>
+XML file is generated in resources/output/<datetime> folder 
+and html is in resources/reports/<datetime>
 
 {% endhighlight %}
 
@@ -27,23 +28,36 @@ This will give you a flavour of what to expect when you automate your applicatio
 {% highlight bash %}
 
 $ aura preview
-# => Configuration in Resourcexml files in workdir/DefaultApp/config will be previewed against target environment. 
+# => Configuration in Resourcexml files in 
+workdir/DefaultApp/config will be previewed against target environment. 
 Reports will be generated in resources/reports/<datetime> folder. 
 
 $ aura commit
-# => Configuration in Resourcexml files in workdir/DefaultApp/config will be previewed against target environment. 
+# => Configuration in Resourcexml files in 
+workdir/DefaultApp/config will be previewed against target environment. 
 Reports will be generated in resources/reports/<datetime> folder. 
 {% endhighlight %}
 
-{% highlight bash %}
 
 QuickStart package provides dummy configuration that you can compare 
 This will give you a flavour of what to expect when you automate your application configuration and deployment using Aura
 
+{% highlight bash %}
 
 $ aura compareFiles
-# =>  Resource xml files in workdir/Default/config and workdir/archive/DefaultApp/config/ are compared
+# =>  Resource xml files in 
+workdir/Default/config and workdir/archive/DefaultApp/config/ are compared
 Reports will be generated in resources/reports/<datetime> folder. 
+
+{% endhighlight %}
+
+QuickStart package PetClinic application that can be used to deploy 
+
+
+{% highlight bash %}
+
+$ aura deploy
+# =>  Application will be deployed to the target environment
 
 {% endhighlight %}
 
