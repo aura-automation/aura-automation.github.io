@@ -19,37 +19,22 @@ Relationship between the resources is captured using the XML tree hierarchy. Val
 Aura is packaged as ANT tasks and comes with a quick start ANT script to enable quick set up. This can be extended and built up to integrate to your binary repository.
 Aura is free open source offering that uses data driven automation removing the need to write scripts whilst retaining your capability to define your WebSphere configuration.
 
-## Quick-start guide
-
-For the impatient, here's how to get a boilerplate Jekyll site up and running.
-
-{% highlight bash %}
-~ $ gem install jekyll
-~ $ jekyll new myblog
-~ $ cd myblog
-~/myblog $ jekyll serve
-# => Now browse to http://localhost:4000
-{% endhighlight %}
-
-That's nothing, though. The real magic happens when you start creating blog
-posts, using the front-matter to control templates and layouts, and taking
-advantage of all the awesome configuration options Jekyll makes available.
 
 ## ProTips™, Notes, and Warnings
 
 Throughout this guide there are a number of small-but-handy pieces of
-information that can make using Jekyll easier, more interesting, and less
+information that can make using Aura easier, more interesting, and less
 hazardous. Here’s what to look out for.
 
 <div class="note">
-  <h5>ProTips™ help you get more from Jekyll</h5>
-  <p>These are tips and tricks that will help you be a Jekyll wizard!</p>
+  <h5>Tips help you get more from Aura</h5>
+  <p>These are tips and tricks that will help you be a Aura wizard!</p>
 </div>
 
 <div class="note info">
   <h5>Notes are handy pieces of information</h5>
   <p>These are for the extra tidbits sometimes necessary to understand
-     Jekyll.</p>
+     Aura.</p>
 </div>
 
 <div class="note warning">
@@ -59,5 +44,5 @@ hazardous. Here’s what to look out for.
 
 If you come across anything along the way that we haven’t covered, or if you
 know of a tip you think others would find handy, please [file an
-issue](https://github.com/mojombo/jekyll/issues/new) and we’ll see about
+issue](https://github.com/aura-automation/aura-automation/issues/new) and we’ll see about
 including it in this guide.
