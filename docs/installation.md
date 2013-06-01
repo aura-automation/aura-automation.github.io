@@ -22,9 +22,13 @@ you’ll need to make sure your system has before you start.
   <h5>Key installation</h5>
   <p>
 	Unzip the auraquickstart.
+
 	Configure JAVA_HOME to point to IBM JDK
+
 	Setup IBM Client and ssl and soap properties
+
 	Connection details to target environment
+
   </p>
 </div>
 
@@ -74,11 +78,13 @@ SASSecurityConfig=WASPATH or AURAINSTALLPATH\waslib\properties/sas.client.props
 ```
 
 b) Note the value you specified for the file
+
 ```
 sourceEnvFile=HOSTNAME
 ```
 Rename the file workdir/DefaultApp/config/properties/renamethisfile.properties to HOSTNAME.properties
 Add values for 
+
 ```
 CellName=
 NodeName=
@@ -86,7 +92,7 @@ ServerCluster=
 ClusterName=
 ```
 
-We are looking to further simply setup if conection details. Should be ready for release soon
+We are looking to further simply installation. Should be ready for release soon
 
 Now that you’ve got everything installed, let’s get to work!
 
