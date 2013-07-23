@@ -6,93 +6,60 @@ next_section: usage
 permalink: /docs/installation/
 ---
 
-Getting Aura installed and ready-to-go should only take a few minutes. You can either install Aura on same host where WebSphere 
-to be managed is installed or you can install on some central host from where you can manage all your WebSphere hosts.
+Getting Jekyll installed and ready-to-go should only take a few minutes. If it
+ever becomes a pain in the ass, please [file an
+issue](https://github.com/mojombo/jekyll/issues/new) (or submit a pull request)
+describing the issue you encountered and how we might make the process easier.
 
 ### Requirements
-Aura-Automation comes with a quick start zip that will allow you to get going rapidly. 
 
-Installing Aura on a central host will required WebSphere thin client jars (looking at size of the jars it is not that thin!), security property files and 
-key stores
+Installing Jekyll is easy and straight-forward, but there are a few requirements
 you’ll need to make sure your system has before you start.
 
-- IBM JDK copied or installed; 1.6 or above
+- [Ruby](http://www.ruby-lang.org/en/downloads/)
+- [RubyGems](http://rubygems.org/pages/download)
+- Linux, Unix, or Mac OS X
 
 <div class="note info">
-  <h5>Key installation</h5>
+  <h5>Running Jekyll on Windows</h5>
   <p>
-	Unzip the auraquickstart.
-	Configure JAVA_HOME to point to IBM JDK
-	Setup IBM Client and ssl and soap properties
-	Connection details to target environment
+    It is possible to get
+    <a href="http://www.madhur.co.in/blog/2011/09/01/runningjekyllwindows.html">
+    Jekyll running on Windows</a>, but the official documentation does not
+    support installation on Windows platforms.
   </p>
 </div>
 
-## Install 
+## Install with RubyGems
 
-1: Select a server to install aura-automation. Aura can work from remote server or local server where WebSphere. You might select to install local on the target server for ease of install.
+The best way to install Jekyll is via
+[RubyGems](http://docs.rubygems.org/read/chapter/3). At the terminal prompt,
+simply run the following command to install Jekyll:
 
-2: Expand the zip in a directory where you intend to install. ant lib, ant bin, aura jars and other thirdparty jars are already supplied.
+{% highlight bash %}
+$ gem install jekyll
+{% endhighlight %}
 
-3: IBM thin client jars are not supplied. You will need to copy Thin Client JAR files com.ibm.ws.admin.client_X.X.X.jar, com.ibm.ws.security.crypto_X.X.X.jar and com.ibm.ws.webservices.thinclient_X.X.X.jar from WAS installation AppServer/runtimes to waslib\runtimes directory. 
+All of Jekyll’s gem dependencies are automatically installed by the above
+command, so you won’t have to worry about them at all. If you have problems
+installing Jekyll, check out the [troubleshooting](../troubleshooting) page or
+[report an issue](https://github.com/mojombo/jekyll/issues/new) so the Jekyll
+community can improve the experience for everyone.
 
-or
+## Optional Extras
 
-You can change the below property in deploy.sh to point to the runtimes folder 
-WAS_CLASSPATH=$CURRENT_DIR/waslib/runtimes/*
-
-4: If you have not installed aura on WebSphere Server then copy sas.client.properties, soap.client.properties and ssl.client.properties to waslib\properties.
-
-Copy the certificate folder "etc" from remote WebSphere to waslib/etc and modify the content of ssl.client.properties so that location of key.p12, trust.p12 etc points to location <aurainstall>\waslib\etc
-
-Change copied ssl.client.properties user.root to <root of aura install>/waslib. For e.g. if aura zip was expanded to \opt\aura; then value of user.root should be \opt\aura\waslib
-
-```
-user.root=\opt\aura\waslib
-```
-
-5: Set JAVA_HOME to IBM JDK in deploy.sh. 
-
-6: Finally 
-
-a) Define the connection details in a property file workdir/DefaultApp/environments/DEV/env.properties. Copy the env-template and rename it to env.properties. Set the values for the properties. 
-If you have installed aura local to the target WebSphere, then websphere file path must be specified here, else specify the location 
-
-```
-SOAPSecurityConfig=<WASPATH> or <AuraInstallPath>\waslib\properties/soap.client.props
-SSLSecurityConfig=<WASPATH> or <AuraInstallPath>\waslib\properties/ssl.client.props
-SASSecurityConfig=<WASPATH> or <AuraInstallPath>\waslib\properties/sas.client.props
-```
-
-b) Note the value you specified for the file
-```
-sourceEnvFile=<myHostName>
-```
-Rename the file workdir/DefaultApp/config/properties/renamethisfile.properties to <myHostName>.properties
-Add values for 
-```
-CellName=
-NodeName=
-ServerCluster=
-ClusterName=
-```
-
-We are looking to further simply setup if conection details. Should be ready for release soon
-
-Now that you’ve got everything installed, let’s get to work!
-
-## Commond Errors
+There are a number of (optional) extra features that Jekyll supports that you
+may want to install, depending on how you plan to use Jekyll. These extras
+include LaTeX support, and the use of alternative content rendering engines.
+Check out [the extras page](../extras) for more information.
 
 <div class="note">
-  <h5>Tip: Enable Syntax Highlighting</h5>
+  <h5>ProTip™: Enable Syntax Highlighting</h5>
   <p>
-	If you see error like
-	[AuraConfigLiteResource] Caused by: [SOAPException: faultCode=SOAP-ENV:Client; m
-	sg=Error opening socket: javax.net.ssl.SSLException: SSLSocketFactory is null. T
-	his can occur if javax.net.ssl.SSLSocketFactory.getDefault() 
-
-	This is case where WebSphere client is not able to load the ssl certs. Check that location of ssl client props specified is correct and user.home in this file is correct. 
+    If you’re the kind of person who is using Jekyll, then chances are you’ll
+    want to enable syntax highlighting using Pygments. You should really
+    <a href="../extras">check out how to do that</a> before you go any further.
   </p>
 </div>
 
-
+Now that you’ve got everything installed, let’s get to work!
