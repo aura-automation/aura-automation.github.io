@@ -13,21 +13,14 @@ development of Aura itself.
 
 ## So what is Aura, exactly?
 
-Aura is application deployment and configuration automation solution for WebSphere Application Server. Aura enables user to define application’s 
-WebSphere configuration as code in easy to read XML files called Resource.xml. User can extract application configuration from a working 
-environment using extract feature. Extracted configuration can be tokenised and applied or previewed to test and production environments. 
-Application code/binaries and Configuration can be versioned and deployed automatically thus eliminating time consuming and 
-error prone manual steps. User friendly reports of the configuration changes allows operations teams to report the changes applied.
-
-Aura has 2 modules auraconfiglite (WebSphere configuration automation) and auradeploylite (deployment automation) as command line utility and ANT tasks.
-
-Aura is free open source offering that uses data driven automation removing the need to write scripts whilst retaining your capability to define 
-your WebSphere configuration.
-
 Aura uses Java programing language and Java API to interface with WebSphere environments.
+Aura represents WebSphere Configuration, such as DataSource, JMS Queues, JVM, as Resources. These Resources are expressed in XML files called Resource XML.
+Relationship between the resources is captured using the XML tree hierarchy. Values in Resource XML files are tokenised to make these files environment agnostic.
+Aura is packaged as ANT tasks and comes with a quick start ANT script to enable quick set up. This can be extended and built up to integrate to your binary repository.
+Aura is free open source offering that uses data driven automation removing the need to write scripts whilst retaining your capability to define your WebSphere configuration.
 
 
-## Tips, Notes, and Warnings
+## ProTips™, Notes, and Warnings
 
 Throughout this guide there are a number of small-but-handy pieces of
 information that can make using Aura easier, more interesting, and less
