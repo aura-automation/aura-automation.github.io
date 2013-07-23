@@ -102,10 +102,11 @@ Now that you’ve got everything installed, let’s get to work!
   <h5>Warnings: SSL Error</h5>
   <p>
 	If you see error like   
+
 	[AuraConfigLiteResource] Caused by: [SOAPException: faultCode=SOAP-ENV:Client; m
 	sg=Error opening socket: javax.net.ssl.SSLException: SSLSocketFactory is null. T
 	his can occur if javax.net.ssl.SSLSocketFactory.getDefault()    
-	<br>
+
 	This is case where WebSphere client is not able to load the ssl certs. Check that location of ssl client props specified is correct and user.home in this file is correct. 
   </p>
 </div>
