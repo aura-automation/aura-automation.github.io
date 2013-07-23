@@ -56,7 +56,7 @@ Copy the certificate folder "etc" from remote WebSphere to waslib/etc and
 modify the content of ssl.client.properties so that location of key.p12, trust.p12
  etc points to location ${aurainstall}\waslib\etc
 
-Change copied ssl.client.properties user.root to <root of aura install>/waslib. For 
+Change copied ssl.client.properties user.root to ${root of aura install}/waslib. For 
 e.g. if aura zip was expanded to \opt\aura; then value of user.root should be \opt\aura\waslib
 
 ```
