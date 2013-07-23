@@ -10,32 +10,16 @@ QuickStart package provides extract templates for many commonly used WebSphere C
 For application deployment PetClinic application has be packaged
  
 {% highlight bash %}
-$ aura extract
-# => The current folder will be generated into ./_site
-This will prompt you to enter WebSphere Configuration Item names as a comma sepearted list. 
-You can enter the name of any resource. 
-For e.g. DataSource if you want to extract the datasources. 
+$ aura extract [-Dnoprompt=true -Denv.name=(env name) -Dscope=(cell,server,cluster,node) -Dresource.name=(resource name)]
+# => Reports and ResourceXML files will be generated in AURA_REPO/resources directory. Run in noprompt mode for silent processes.
 
-Result of the extract is an xml and html file. 
-XML file is generated in resources/output/<datetime> folder 
-and html is in resources/reports/<datetime>
+$ aura preview [-Dnoprompt=true -Denv.name=(env name)]
+# => Run this from location containing config and properties folder. 
+All ResourceXML in config directory will be processed and reports will be generated in AURA_REPO/resources directory
 
-{% endhighlight %}
-
-QuickStart package provides dummy configuration that you can preview or commit in your play WebSphere environment
-This will give you a flavour of what to expect when you automate your application configuration and deployment using Aura
-
-{% highlight bash %}
-
-$ aura preview
-# => Configuration in Resourcexml files in 
-workdir/DefaultApp/config will be previewed against target environment. 
-Reports will be generated in resources/reports/<datetime> folder. 
-
-$ aura commit
-# => Configuration in Resourcexml files in 
-workdir/DefaultApp/config will be previewed against target environment. 
-Reports will be generated in resources/reports/<datetime> folder. 
+$ aura commit  [-Dnoprompt=true -Denv.name=(env name)]
+# => Run this from location containing config and properties folder. 
+All ResourceXML in config directory will be processed and reports will be generated in AURA_REPO/resources directory
 {% endhighlight %}
 
 
@@ -51,13 +35,22 @@ Reports will be generated in resources/reports/<datetime> folder.
 
 {% endhighlight %}
 
-QuickStart package PetClinic application that can be used to deploy 
+Commands to manage application 
 
 
 {% highlight bash %}
 
-$ aura deploy
-# =>  Application will be deployed to the target environment
+$ aura startApp [-Dnoprompt=true -Denv.name=(env name)]
+# =>  Start all application matching the ear file name in ear dir
+
+$ aura stopApp [-Dnoprompt=true -Denv.name=(env name)]
+# =>  Stop all application matching the ear file name in ear dir
+
+$ aura deployApp [-Dnoprompt=true -Denv.name=(env name) -Dcluster.name=(cluster to deploy) -Dserver.name=(server to deploy)]
+# =>  deploy all application matching the ear file name in ear dir
+
+$ aura exportApp [-Dnoprompt=true -Denv.name=(env name)]
+# =>  Export all application matching the ear file name in ear dir
 
 {% endhighlight %}
 

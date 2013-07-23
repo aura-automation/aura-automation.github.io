@@ -6,30 +6,44 @@ next_section: configuration
 permalink: /docs/structure/
 ---
 
-Jekyll is, at its core, a text transformation engine. The concept behind the
-system is this: you give it text written in your favorite markup language, be
-that Markdown, Textile, or just plain HTML, and it churns that through a layout
-or series of layout files. Throughout that process you can tweak how you want
-the site URLs to look, what data gets displayed in the layout, and more. This is
-all done through editing text files, and the static web site is the final
-product.
+Aura is, at its core, a text deployment and configuration automation engine for WebSphere. 
+The concept is to define the configuration as code in XML and version control with application code.
+Throughout that Resource xml are tokenised thus can be applied to any environment. Configuration can be 
+previewed and compared so that you can make an informed judgment.
 
-A basic Jekyll site usually looks something like this:
+A basic Auar install usually looks something like this:
 
 {% highlight bash %}
 .
-├── _config.yml
-├── _includes
-|   ├── footer.html
-|   └── header.html
-├── _layouts
-|   ├── default.html
-|   └── post.html
-├── _posts
-|   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile
-|   └── 2009-04-26-barcamp-boston-4-roundup.textile
-├── _site
-└── index.html
+├── ant
+├── lib
+├── logs
+├── properties
+├── resource
+|   ├── extractTemplates
+|   	├── cell
+|   	├── cluster
+|   	└── server
+├── _waslib
+|   ├── etc
+|   └── properties
+|   └── runtimes
+├── _workdir
+|   ├── binaries
+|   |	├── deploydata
+|   |	└── ear
+|   ├── config
+|   |	├── xml
+|   |	└── properties
+|   ├── environments
+|   |	├── deploydata
+|   └──	└── ear
+├── aura.sh/bat
+├── auraconfiglite.xml
+├── auradeploylite.xml
+├── init.xml
+└── monitor.xml
+
 {% endhighlight %}
 
 An overview of what each of these does:
@@ -45,15 +59,12 @@ An overview of what each of these does:
   <tbody>
     <tr>
       <td>
-        <p><code>_config.yml</code></p>
+        <p><code>ant</code></p>
       </td>
       <td>
         <p>
 
-          Stores <a href="../configuration">configuration</a> data. Many of
-          these options can be specified from the command line executable but
-          it’s easier to specify them here so you don’t have to remember them.
-
+	   Ant libraries, If you need more information on ANT refer <a href="http://ant.apache.org">ANT Website</a>,  	
         </p>
       </td>
     </tr>
