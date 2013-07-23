@@ -6,45 +6,53 @@ next_section: structure
 permalink: /docs/usage/
 ---
 
-QuickStart package provides extract templates for many commonly used WebSphere Configuration items. 
-For application deployment PetClinic application has be packaged
- 
+The Jekyll gem makes a `jekyll` executable available to you in your Terminal
+window. You can use this command in a number of ways:
+
 {% highlight bash %}
-$ aura extract
+$ jekyll build
 # => The current folder will be generated into ./_site
-This will prompt you to enter WebSphere Configuration Item names as a comma sepearted list. 
-You can enter the name of any resource. 
-For e.g. DataSource if you want to extract the datasources. 
 
-Result of the extract is an xml and html file. 
-XML file is generated in resources/output/<datetime> folder and html is in resources/reports/<datetime>
+$ jekyll build --destination <destination>
+# => The current folder will be generated into <destination>
 
+$ jekyll build --source <source> --destination <destination>
+# => The <source> folder will be generated into <destination>
+
+$ jekyll build --watch
+# => The current folder will be generated into ./_site,
+#    watched for changes, and regenerated automatically.
 {% endhighlight %}
 
-QuickStart package provides dummy configuration that you can preview or commit in your play WebSphere environment
-This will give you a flavour of what to expect when you automate your application configuration and deployment using Aura
+Jekyll also comes with a built-in development server that will allow you to
+preview what the generated site will look like in your browser locally.
 
 {% highlight bash %}
+$ jekyll serve
+# => A development server will run at http://localhost:4000/
 
-$ aura preview
-# => Configuration in Resourcexml files in workdir/DefaultApp/config will be previewed against target environment. 
-Reports will be generated in resources/reports/<datetime> folder. 
-
-$ aura commit
-# => Configuration in Resourcexml files in workdir/DefaultApp/config will be previewed against target environment. 
-Reports will be generated in resources/reports/<datetime> folder. 
+$ jekyll serve --watch
+# => As above, but watch for changes and regenerate automatically.
 {% endhighlight %}
+
+This is just a few of the available [configuration options](../configuration).
+Many configuration options can either be specified as flags on the command line,
+or alternatively (and more commonly) they can be specified in a `_config.yml`
+file at the root of the source directory. Jekyll will automatically use the
+options from this file when run. For example, if you place the following lines
+in your `_config.yml` file:
+
+{% highlight yaml %}
+source:      _source
+destination: _deploy
+{% endhighlight %}
+
+Then the following two commands will be equivalent:
 
 {% highlight bash %}
-
-QuickStart package provides dummy configuration that you can compare 
-This will give you a flavour of what to expect when you automate your application configuration and deployment using Aura
-
-
-$ aura compareFiles
-# =>  Resource xml files in workdir/Default/config and workdir/archive/DefaultApp/config/ are compared
-Reports will be generated in resources/reports/<datetime> folder. 
-
+$ jekyll build
+$ jekyll build --source _source --destination _deploy
 {% endhighlight %}
 
-
+For more about the possible configuration options, see the
+[configuration](../configuration) page.
