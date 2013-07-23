@@ -30,22 +30,30 @@ you’ll need to make sure your system has before you start.
 
 ## Install 
 
-1: Select a server to install aura-automation. Aura can work from remote server or local server where WebSphere. You might select to install local on the target server for ease of install.
+1: Select a server to install aura-automation. Aura can work from remote server or 
+local server where WebSphere. You might select to install local on the target server for ease of install.
 
-2: Expand the zip in a directory where you intend to install. ant lib, ant bin, aura jars and other thirdparty jars are already supplied.
+2: Expand the zip in a directory where you intend to install. ant lib, ant bin, 
+aura jars and other thirdparty jars are already supplied.
 
-3: IBM thin client jars are not supplied. You will need to copy Thin Client JAR files com.ibm.ws.admin.client_X.X.X.jar, com.ibm.ws.security.crypto_X.X.X.jar and com.ibm.ws.webservices.thinclient_X.X.X.jar from WAS installation AppServer/runtimes to waslib\runtimes directory. 
+3: IBM thin client jars are not supplied. You will need to copy Thin Client 
+JAR files com.ibm.ws.admin.client_X.X.X.jar and  com.ibm.ws.security.crypto_X.X.X.jar 
+from WAS installation AppServer/runtimes to waslib\runtimes directory. 
 
 or
 
 You can change the below property in deploy.sh to point to the runtimes folder 
 WAS_CLASSPATH=$CURRENT_DIR/waslib/runtimes/*
 
-4: If you have not installed aura on WebSphere Server then copy sas.client.properties, soap.client.properties and ssl.client.properties to waslib\properties.
+4: If you have not installed aura on WebSphere Server then copy sas.client.properties, 
+soap.client.properties and ssl.client.properties to waslib\properties.
 
-Copy the certificate folder "etc" from remote WebSphere to waslib/etc and modify the content of ssl.client.properties so that location of key.p12, trust.p12 etc points to location <aurainstall>\waslib\etc
+Copy the certificate folder "etc" from remote WebSphere to waslib/etc and 
+modify the content of ssl.client.properties so that location of key.p12, trust.p12
+ etc points to location ${aurainstall}\waslib\etc
 
-Change copied ssl.client.properties user.root to <root of aura install>/waslib. For e.g. if aura zip was expanded to \opt\aura; then value of user.root should be \opt\aura\waslib
+Change copied ssl.client.properties user.root to <root of aura install>/waslib. For 
+e.g. if aura zip was expanded to \opt\aura; then value of user.root should be \opt\aura\waslib
 
 ```
 user.root=\opt\aura\waslib
@@ -55,20 +63,21 @@ user.root=\opt\aura\waslib
 
 6: Finally 
 
-a) Define the connection details in a property file workdir/DefaultApp/environments/DEV/env.properties. Copy the env-template and rename it to env.properties. Set the values for the properties. 
+a) Define the connection details in a property file workdir/DefaultApp/environments/DEV/env.properties. 
+Copy the env-template and rename it to env.properties. Set the values for the properties. 
 If you have installed aura local to the target WebSphere, then websphere file path must be specified here, else specify the location 
 
 ```
-SOAPSecurityConfig=<WASPATH> or <AuraInstallPath>\waslib\properties/soap.client.props
-SSLSecurityConfig=<WASPATH> or <AuraInstallPath>\waslib\properties/ssl.client.props
-SASSecurityConfig=<WASPATH> or <AuraInstallPath>\waslib\properties/sas.client.props
+SOAPSecurityConfig=WASPATH or AURAINSTALLPATH\waslib\properties/soap.client.props
+SSLSecurityConfig=WASPATH or AURAINSTALLPATH\waslib\properties/ssl.client.props
+SASSecurityConfig=WASPATH or AURAINSTALLPATH\waslib\properties/sas.client.props
 ```
 
 b) Note the value you specified for the file
 ```
-sourceEnvFile=<myHostName>
+sourceEnvFile=HOSTNAME
 ```
-Rename the file workdir/DefaultApp/config/properties/renamethisfile.properties to <myHostName>.properties
+Rename the file workdir/DefaultApp/config/properties/renamethisfile.properties to HOSTNAME.properties
 Add values for 
 ```
 CellName=
@@ -83,14 +92,14 @@ Now that you’ve got everything installed, let’s get to work!
 
 ## Commond Errors
 
-<div class="note">
-  <h5>Tip: Enable Syntax Highlighting</h5>
+<div class="note warning">
+  <h5>Warnings: SSL Error</h5>
   <p>
-	If you see error like
+	If you see error like   
 	[AuraConfigLiteResource] Caused by: [SOAPException: faultCode=SOAP-ENV:Client; m
 	sg=Error opening socket: javax.net.ssl.SSLException: SSLSocketFactory is null. T
-	his can occur if javax.net.ssl.SSLSocketFactory.getDefault() 
-
+	his can occur if javax.net.ssl.SSLSocketFactory.getDefault()    
+	<br>
 	This is case where WebSphere client is not able to load the ssl certs. Check that location of ssl client props specified is correct and user.home in this file is correct. 
   </p>
 </div>
