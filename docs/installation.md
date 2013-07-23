@@ -90,7 +90,7 @@ We are looking to further simply setup if conection details. Should be ready for
 
 Now that you’ve got everything installed, let’s get to work!
 
-## Commond Errors
+## Common Errors
 
 <div class="note warning">
   <h5>Warnings: SSL Error</h5>
