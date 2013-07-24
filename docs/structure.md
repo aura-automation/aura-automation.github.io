@@ -72,10 +72,10 @@ An overview of what each of these does:
 </table>
 </div>
 
-A basic Aura install looks like this:
+A basic Aura install looks like this
 
 {% highlight bash %}
-.
+
 ├── bin
 ├── lib
 ├── opt
