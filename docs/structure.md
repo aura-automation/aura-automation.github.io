@@ -47,108 +47,64 @@ An overview of what each of these does:
   <tbody>
     <tr>
       <td>
-        <p><code>ant</code></p>
+        <p><code>bin</code></p>
       </td>
       <td>
         <p>
 
-	   Ant libraries, If you need more information on ANT refer <a href="http://ant.apache.org">ANT Website</a>,  	
+	   Aura bat/shell scripts.  	
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p><code>_includes</code></p>
+        <p><code>lib</code></p>
       </td>
       <td>
         <p>
-
-          These are the partials that can be mixed and matched by your layouts
-          and posts to facilitate reuse. The liquid tag
-          <code>{% raw %}{% include file.ext %}{% endraw %}</code>
-          can be used to include the partial in
-          <code>_includes/file.ext</code>.
-
+	aura and supporting lib jars,	
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p><code>_layouts</code></p>
+        <p><code>opt</code></p>
       </td>
       <td>
         <p>
-
-          These are the templates that wrap posts. Layouts are chosen on a post-
-          by-post basis in the <a href="../frontmatter">YAML front matter</a>,
-          which is described in the next section. The liquid tag
-          <code>{% raw %}{{ content }}{% endraw %}</code>
-          is used to inject content into the web page.
-
+	Thirparty tools like ant-contrib, ant and groovy.
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p><code>_posts</code></p>
+        <p><code>properties</code></p>
+      </td>
+      <td>
+        <p>
+	 properties required for core aura, e.g. log4j, commons-logging etc
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>resources</code></p>
       </td>
       <td>
         <p>
 
-          Your dynamic content, so to speak. The format of these files is
-          important, and must follow the format:
-          <code>YEAR-MONTH-DAY-title.MARKUP</code>.
-          The <a href="../permalinks">permalinks</a> can be customized for each
-          post, but the date and markup language are determined solely by the
-          file name.
+          This is location for templates Resource xml for extract operation. 
 
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p><code>_site</code></p>
+        <p><code>var</code></p>
       </td>
       <td>
         <p>
-
-          This is where the generated site will be placed (by default) once
-          Jekyll is done transforming it. It's probably a good idea to add this
-          to your <code>.gitignore</code> file.
-
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><code>index.html</code> and other HTML, Markdown, Textile files</p>
-      </td>
-      <td>
-        <p>
-
-          Provided that the file has a <a href="../frontmatter">YAML Front
-          Matter</a> section, it will be transformed by Jekyll. The same will
-          happen for any <code>.html</code>, <code>.markdown</code>,
-          <code>.md</code>, or <code>.textile</code> file in your site's root
-          directory or directories not listed above.
-
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Other Files/Folders</p>
-      </td>
-      <td>
-        <p>
-
-          Every other directory and file except for those listed above—such as
-          <code>css</code> and <code>images</code> folders,
-          <code>favicon.ico</code> files, and so forth—will be copied verbatim
-          to the generated site. There are plenty of <a href="../sites">sites
-          already using Jekyll</a> if you're curious to see how they're laid
-          out.
-
+	Directory contains groovy, ant etc scripts required.
         </p>
       </td>
     </tr>
@@ -187,28 +143,23 @@ An overview of what each of these does:
   <tbody>
     <tr>
       <td>
-        <p><code>ant</code></p>
+        <p><code>plugins</code></p>
       </td>
       <td>
         <p>
 
-	   Ant libraries, If you need more information on ANT refer <a href="http://ant.apache.org">ANT Website</a>,  	
+	   Location where plugins will be installed.  	
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p><code>_includes</code></p>
+        <p><code>resources</code></p>
       </td>
       <td>
         <p>
 
-          These are the partials that can be mixed and matched by your layouts
-          and posts to facilitate reuse. The liquid tag
-          <code>{% raw %}{% include file.ext %}{% endraw %}</code>
-          can be used to include the partial in
-          <code>_includes/file.ext</code>.
-
+	Location where the outputs like ResourceXML, HTML reports and ear are exported
         </p>
       </td>
     </tr>
