@@ -72,3 +72,27 @@ An overview of what each of these does:
 </table>
 </div>
 
+A basic Aura install looks like this:
+
+{% highlight bash %}
+.
+├── bin
+├── lib
+├── opt
+|   ├── ant-contrib
+|   ├── apache-ant-1.7.1
+|   └── groovy-1.7.4
+├── properties
+├── resource
+|   ├── extractTemplates
+|   	├── cell
+|   	├── cluster
+|   	└── server
+├── _var
+|   ├── common
+|   └── scripts
+└── └── was
+{% endhighlight %}
+
+
+
