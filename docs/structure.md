@@ -21,6 +21,7 @@ Aura Working directory: This is structure in your source code tree, Run aura com
 |   |	├── ..Resource.xml
 |   ├── properties
 └── └── └── [env.name].properties
+{% endhighlight %}
 
 
 An overview of what each of these does:
