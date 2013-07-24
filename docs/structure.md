@@ -24,4 +24,51 @@ Aura Working directory: This is structure in your source code tree, Run aura com
 {% endhighlight %}
 
 
+An overview of what each of these does:
+
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+      <th>File / Directory</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <p><code>resources</code></p>
+      </td>
+      <td>
+        <p>
+
+	   Location for all the resource xml files for the application  	
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>properties</code></p>
+      </td>
+      <td>
+        <p>
+
+	Location for values of token for all the environments
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>ear</code></p>
+      </td>
+      <td>
+        <p>
+
+	EAR files and deploydata files for the application
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
