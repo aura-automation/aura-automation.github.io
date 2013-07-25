@@ -3,7 +3,7 @@ layout: docs
 title: Resource XML
 prev_section: structure
 next_section: properties
-permalink: /docs/resource-xml/
+permalink: /docs/resourcexml/
 ---
 
 The Resource XML is where Aura starts to get really cool. Any file that ends with Resource.xml
