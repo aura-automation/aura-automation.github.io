@@ -2,7 +2,7 @@
 layout: docs
 title: Resource XML
 prev_section: structure
-next_section: properties
+next_section: posts
 permalink: /docs/resourcexml/
 ---
 
