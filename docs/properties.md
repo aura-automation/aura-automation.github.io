@@ -1,9 +1,9 @@
 ---
 layout: docs
 title: Properties
-prev_section: structure
-next_section: properties
-permalink: /docs/resource-xml/
+prev_section: resourcexml
+next_section: posts
+permalink: /docs/properties/
 
 ## Predefined Tokens
 
