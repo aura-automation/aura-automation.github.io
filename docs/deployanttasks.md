@@ -10,9 +10,6 @@ This task is used to deploy the EAR or WAR file to target cluster or server.
 The task also supports multi ear deploy. 
 If any changes are required to the EAR then process EAR ant task explained below must be used before Deploy.
 
-## AuraDeployLite Task
-This task is used to deploy the EAR/WAR file to target cluster/server. The task also supports multi ear deploy. If any changes are required to the EAR then process EAR ant task explained below must be used before Deploy.
-
 Attribute|Description|Required|
 ---------|-----------|--------|
 applicationName|Name of the application being deployed.|Yes|
