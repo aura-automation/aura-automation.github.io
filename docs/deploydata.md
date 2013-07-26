@@ -18,42 +18,42 @@ deploy tag is root tag and all the deploydata files must have deploy tag as root
 deployversion tag is used to get the version of deploydata.xml format. Current release of Slick-Deploy supports 1.1.0 version of deploydata.xml.
 
 Example
-``` xml
+<code>
 <deploy>
 
 <deployversion value="1.0.0" />
 
-```
+<code/>
 
 **startWeight:**
 
 startWeight tag is used to configure the weight of the application in shared environment.
 
 Example
-``` xml
+<code>
 <startingWeight value="1"/>
-```
+<code/>
 **libraries:**
 
 libraries tag is used to include the shared library for the application. Slick-Deploy maps the shared library to the application at application level.
 
 Example
-``` xml
+<code>
 <libraries>
 
     <sharedLibName name="TestSharedLib"/> 
 
 </libraries>
-```
+<code/>
 
 **generateEJBDeployCode:**
 
 If you need to generate the deployed code of EJB while deploying the application then set value attribute of this tag true.
 
 Example
-``` xml
+<code>
     <generateEJBDeployCode value="true"/> 
-```
+<code/>
 
 **role-binding and special-binding:**
 
@@ -68,7 +68,7 @@ special-binding tag groups the role to group mapping tags for the role that mapp
 Add the special-binding tags as required by the application.
 
 Example
-``` xml
+<code>
 <role-binding>
 
     <role name="RoleName"> 
@@ -90,14 +90,14 @@ Example
     </role>
 
 </special-binding>
-```
+<code/>
 
 **run-as role-binding:**
 
 Run as role-binding tag maps role to user and password. Sub tags of run-as-binding tag are role tags. role tag must have attributes name, username and password.
 
 Example
-``` xml
+<code>
 <run-as-binding>
 
     <role name="RoleName" 
@@ -107,7 +107,7 @@ Example
     userpassword="Administpasswd" /> 
 
 </run-as-binding>
-```
+<code/>
 
 **ejb-module:**
 
@@ -132,7 +132,7 @@ There can be 2 different types of sub tags of the ejb-module enterprise-bean-bin
 **ejb-ref-binding**, resource-ref-binding and resource-env-binding are valid sub tags for the message-bean-binding. Details for these sub tags are same as above.
 
 Example
-``` xml
+<code>
 <ejb-module name="trade3EJB.jar" module-ds-bnd="jdbc/Trade3/TradeDataSource">
 
     <enterprise-bean-binding name="TradeEJB" jndi-name="ejb/Trade3/Trade" >
@@ -178,7 +178,7 @@ Example
     </message-bean-binding>
 
 </ejb-module>
-```
+<code/>
 
 **web-module:**
 
@@ -191,7 +191,7 @@ resource-ref-binding sub tag is for the res-ref for this web module. Value of th
 resource-env-binding sub tag is for the res-env for this web module. Value of the name attribute is the name of the Resource environment and value of jndi-name-link attribute is the JNDI name mapping.
 
 Example
-``` xml
+<code>
 <web-module name="trade3Web.war" virtualhost="www_host">
 
     <ejb-ref-binding name="ejb/Trade">
@@ -217,4 +217,4 @@ Example
 <web-module name="soap.war" virtualhost="www_host">
 
 </web-module>
-```
+<code/>
