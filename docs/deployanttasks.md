@@ -50,4 +50,13 @@ will contain the configurations of the EAR file. Generally this file must not di
 If there are any Application configuration that are not supported by deloydata.xml format then you
  can use auraconfiglite to apply the configuration post deployment.
 
+|Attribute|Description|Required|
+|---------|-----------|--------|
+earFileLocation|Enter the full path of the EAR file location|No|
+deployDataLocation|Enter the full path of the Deploydata file location|No|
+isMultiEAR|boolean, true or false if the deployment type is multi ear|Yes|
+multiEARLocation|Location of Directory containning EAR files |No|
+multiEARDeployData|Location of Directory containning deploydata files |No|
+VirtualHost|Typically user will supply this information in a deploydata file. Use this when  only virtual host mappping configuration is to be changed and same virtual host is to applied to all the application, thus no need to create deplydata files.|No|
+defaultValues|Boolean. default is false.deploydata file should define all the configurations in the EAR. In the scenario where only a subset of configurations is to be enforced during the deployment then set defaultValues to true. Now processEAR task will accept the default values supplied in the EAR files. |No|
 
