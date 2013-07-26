@@ -10,8 +10,8 @@ This task is used to deploy the EAR or WAR file to target cluster or server.
 The task also supports multi ear deploy. 
 If any changes are required to the EAR then process EAR ant task explained below must be used before Deploy.
 
-Attribute|Description|Required|
----------|-----------|--------|
+Attribute | Description | Required |
+----------|-------------|----------|
 applicationName|Name of the application being deployed.|Yes|
 cluster|Cluster to which the application should be deployed. Either server Name or cluster name must be specified. Both cannot be specified|No|
 server|Server to which the application should be deployed. Either server Name or cluster name must be specified. Both cannot be specified|No|
@@ -40,8 +40,8 @@ operation|install, uninstall or reinstall. Default is reinstall.|No|
 If there are certain configurations in the applications for e.g. Security role mappings, JNDI bindings then those configurations can be defined in Deploydata.xml. Deploydata.xml can be supplied for each or subset of EAR files, this file will contain the configurations of the EAR file. Generally this file must not differ between environments, but if there is a requirement to support changes between the environments then tokensations can be used. In case of multi ear; AuraProcessEAR using maming conventions to find the deploydata in the deploydata directory mentioned in the ANT task. Naming conventioned is <EARFileName>-deploydata.xml.
 If there are any Application configuration that are not supported by deloydata.xml format then you can use auraconfiglite to apply the configuration post deployment.
 
-|Attribute|Description|Required|
-|---------|-----------|--------|
+Attribute | Description | Required |
+----------|-------------|----------|
 earFileLocation|Enter the full path of the EAR file location|No|
 deployDataLocation|Enter the full path of the Deploydata file location|No|
 isMultiEAR|boolean, true or false if the deployment type is multi ear|Yes|
