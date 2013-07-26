@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Deploy Data
+title: DeployData
 prev_section: properties
 next_section: rulesxml
 permalink: /docs/deploydata/
