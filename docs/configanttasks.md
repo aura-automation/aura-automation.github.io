@@ -2,7 +2,7 @@
 layout: docs
 title: Config ANT Tasks
 prev_section: rulesxml
-next_section: posts
+next_section: deployanttasks
 permalink: /docs/configanttasks/
 ---
 
