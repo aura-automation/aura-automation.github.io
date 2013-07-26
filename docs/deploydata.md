@@ -18,10 +18,10 @@ deploy tag is root tag and all the deploydata files must have deploy tag as root
 deployversion tag is used to get the version of deploydata.xml format. 
 
 Example
-{% highlight yaml %}
+{% raw %}
 
 <deploy>
 
 <deployversion value="1.0.0" />
 
-{% endhighlight %}
+{% raw %}
