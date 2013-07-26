@@ -13,8 +13,7 @@ will be processed by Aura as a configuration data file. Root node for this file 
 {% highlight yaml %}
 
  <resources>
-
-     <Cell name=”{% raw %}${{CellName}}{% endraw %}”>
+     <Cell name=”${{CellName}}”>
             <JDBCProvider name="MyProvider">
             </JDBCProvider>
       </Cell>		
@@ -23,6 +22,6 @@ will be processed by Aura as a configuration data file. Root node for this file 
 
 Between these resources tag, you can set Cell with name being variables. 
 Other attribute values like database name can tokenised and replaced with variable as required. 
-Syntax of tokens is {% raw %}${{ }}{% endraw %}. Tokens within the curly brackets will be replaces with values 
+Syntax of tokens is <code>${{ }} </code>. Tokens within the curly brackets will be replaces with values 
 specified in the environment properties file.
 
