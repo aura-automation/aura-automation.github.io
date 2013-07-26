@@ -35,7 +35,7 @@ CellName is predefined variable. Any extract operation automatically replaces Ce
 </div>
 
 ## Common Properties
-_import allows the user to import property file. This can be useful if there are common properties across the environments 
+"_import" allows the user to import property file. This can be useful if there are common properties across the environments 
 or if properties file is too big to manage then it can be broken in small files.
 
 							
