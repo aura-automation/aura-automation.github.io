@@ -36,7 +36,11 @@ startClusterBeforeDeploy|True or false, Will start the cluster before applicatio
 reStartClusterAfterDeploy|True or false, Will restart the cluster after application deployment. Default is false.|No|
 operation|install, uninstall or reinstall. Default is reinstall.|No|
 
-AuraProcessEAR Task
+***
+
+### AuraProcessEAR Task
+
+
 If there are certain configurations in the applications for e.g. Security role mappings, JNDI bindings then those configurations can 
 be defined in Deploydata.xml. Deploydata.xml can be supplied for each or subset of EAR files, this file 
 will contain the configurations of the EAR file. Generally this file must not differ between environments, but if
