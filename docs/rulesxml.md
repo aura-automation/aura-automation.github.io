@@ -9,8 +9,9 @@ permalink: /docs/rulesxml/
 AuraConfigLite supports rules. Rules are defined in a xml file. Rule can be  used to restrict or control the changes to resources type. 
 
 For e.g.
-* User should not be able to change name of the Cell.
-* User cannot create a new Server.
+* User cannot manage Cell.
+* User cannot manage Node.
+* User cannot manage Server.
 
 {% highlight xml %}
 
