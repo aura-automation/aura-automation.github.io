@@ -1,0 +1,77 @@
+<deploy>
+
+<deployversion value="1.1.0"/>
+
+<enterprise-application>
+
+<generateEJBDeployCode value="false"/>
+
+<libraries>
+<sharedLibName name="TestSharedLib"/>
+</libraries>
+
+<role-binding>
+    <role name="RoleName">
+        <group name="GroupName1"/>
+    </role>
+</role-binding>
+
+<special-binding>
+  <role name="SpecialRoleName">
+    <group name="AllAuthenticatedUsers" />
+    <group name="Everyone" />
+  </role>
+</special-binding>
+
+<run-as-binding>
+  <role name="RoleName" username="Administrators" userpassword="Administrators">
+  </role>
+</run-as-binding>
+
+<ejb-module name="trade3EJB.jar" module-ds-bnd="jdbc/Trade3/TradeDataSource">
+
+    <message-bean-binding name="TradeBrokerMDB" messagelistner="trade3tradeport">
+       <ejb-ref-binding name="ejb/Trade3/Trade ">
+          <jndi-name-link name="ejb/Trade3/Trade" />
+       </ejb-ref-binding>
+    </message-bean-binding>
+
+    <enterprise-bean-binding name="TradeEJB" jndi-name="ejb/Trade3/Trade" >
+       <ejb-ref-binding name="ejb/Trade">
+          <jndi-name-link name="ejb/Trade3/Trade" />
+       </ejb-ref-binding>
+       <resource-ref-binding name="jms/QueueConnectionFactory">
+          <jndi-name-link name="jms/Trade3/TradeBrokerQCF" />
+       </resource-ref-binding>
+       <resource-env-binding name="jms/TradeStatsTopic">
+          <jndi-name-link name="jms/Trade3/TradeStatsTopic" />
+       </resource-env-binding>
+    </enterprise-bean-binding>
+
+    <enterprise-bean-binding name="HoldingEJB" jndi-name="ejb/Trade3/Holding">
+       <cmp2-ds-binding>
+          <jndi-name-link name="jdbc/Trade3/TradeDataSource" />
+       </cmp2-ds-binding>
+    </enterprise-bean-binding>
+
+</ejb-module>
+
+
+<web-module name="trade3Web.war" virtualhost="www_host">
+    <ejb-ref-binding name="ejb/Trade">
+       <jndi-name-link name="ejb/Trade3/Trade" />
+    </ejb-ref-binding>
+    <resource-ref-binding name="jms/QueueConnectionFactory">
+       <jndi-name-link name="jms/Trade3/TradeBrokerQCF" />
+       </resource-ref-binding>
+    <resource-env-binding name="jms/TradeBrokerQueue">
+       <jndi-name-link name="jms/Trade3/TradeBrokerQueue" />
+    </resource-env-binding>
+</web-module>
+
+<web-module name="soap.war" virtualhost="www_host">
+</web-module>
+
+</enterprise-application>
+
+</deploy> 

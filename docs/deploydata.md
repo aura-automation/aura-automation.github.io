@@ -19,7 +19,7 @@ deployversion tag is used to get the version of deploydata.xml format.
 
 Example
 
-{% highlight yaml %}
+{% highlight xml %}
 <deploy>
 
 <deployversion value="1.0.0" />
