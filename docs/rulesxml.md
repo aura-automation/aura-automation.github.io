@@ -17,10 +17,10 @@ For e.g.
 
 <resources-metadata> 
 <ConfigObject type="Cell" editable="none"> 
-	<ConfigObject type="Node" editable="none">   
-		<ConfigObject type="Server" editable="none">   
-		</ConfigObject>   
-	</ConfigObject>    
+   <ConfigObject type="Node" editable="none">   
+	<ConfigObject type="Server" editable="none">   
+	</ConfigObject>   
+   </ConfigObject>    
 </ConfigObject>   
 </resources-metadata>  
 {% endhighlight %}
@@ -45,14 +45,14 @@ At attribute level, following rules can be applied editable="false", min, max
 {% highlight xml %}							
 <resources-metadata>
 <ConfigObject type="Cell" editable="none">
-	<ConfigObject type="ServerCluster" editable="none">
-		<ConfigObject type="ClusterMember" editable="update">
-			<attributes>
-				<attribute name="name" editable="false" />
-				<attribute name="weight" min="2"  max="4"/>
-			</attributes>
-		</ConfigObject>
-	</ConfigObject> 
+    <ConfigObject type="ServerCluster" editable="none">
+	<ConfigObject type="ClusterMember" editable="update">
+	     <attributes>
+		<attribute name="name" editable="false" />
+		<attribute name="weight" min="2"  max="4"/>
+	     </attributes>
+	</ConfigObject>
+    </ConfigObject> 
 </ConfigObject>
 </resources-metadata>
 {% endhighlight %}
