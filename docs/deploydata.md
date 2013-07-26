@@ -15,7 +15,7 @@ Below is the description of deploydata tags
 
 deploy tag is root tag and all the deploydata files must have deploy tag as root tag.
 
-deployversion tag is used to get the version of deploydata.xml format. Current release of Slick-Deploy supports 1.1.0 version of deploydata.xml.
+deployversion tag is used to get the version of deploydata.xml format. 
 
 Example
 
