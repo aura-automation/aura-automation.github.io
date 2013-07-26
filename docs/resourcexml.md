@@ -13,7 +13,7 @@ will be processed by Aura as a configuration data file. Root node for this file 
 {% highlight yaml %}
 
  <resources>
-     <Cell name=”$\{{CellName\}}”>
+     <Cell name=”${{CellName}}”>
             <JDBCProvider name="MyProvider">
             </JDBCProvider>
       </Cell>		

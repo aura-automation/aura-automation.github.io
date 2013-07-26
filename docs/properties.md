@@ -2,7 +2,7 @@
 layout: docs
 title: Properties
 prev_section: resourcexml
-next_section: posts
+next_section: deploydata
 permalink: /docs/properties/
 ---
 ## Predefined Tokens
