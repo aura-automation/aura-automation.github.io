@@ -10,7 +10,7 @@ The Resource XML is where Aura starts to get really cool. Any file that ends wit
 will be processed by Aura as a configuration data file. Root node for this file must be resources and nested between resources are WAS configuration items. 
 . Here is a basic example:
 
-{% highlight yaml %}
+{% highlight raw %}
 
  <resources>
      <Cell name=”${{CellName}}”>
