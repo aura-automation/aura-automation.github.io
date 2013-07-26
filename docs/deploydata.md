@@ -2,7 +2,7 @@
 layout: docs
 title: Deploy Data
 prev_section: properties
-next_section: posts
+next_section: rulesxml
 permalink: /docs/deploydata/
 ---
 
