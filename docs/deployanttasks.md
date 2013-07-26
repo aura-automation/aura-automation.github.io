@@ -21,19 +21,4 @@ If any changes are required to the EAR then process EAR ant task explained below
 |password|User name to connect to Target Server|Yes|
 |port|RMI or SOAP Number to connect to on the Target Server|Yes|
 |host|Name of the server where Deployment Manager is installed|Yes|
-|failIfResourceAbsent|Boolean value of Yes or No or True or False. If true then deploy will fail if the resource mentioned in the DeployData.xml is missing|Yes|
-|connectionType|RMI or SOAP Protocol|Yes|
-|shouldStart|True or False, If you want to start the application the value must be set to true.|Yes|
-|isMultiEAR|True or False, If the deployment is for multiple ear files.|Yes|
-|multiEARDeployData|Directory location of the deploydata files for multiEar deploy, Only required if multiEar is true.|No|
-|multiEARLocation|Directory location of the ear files for multiEar deploy, Only required if multiEar is true.|No|
-|sleepTimeForSyncRequest|Time in millisecs for AuraDeployLite to sleep before requesting synchronise status for nodesync. Defaults to 50000.|No|
-|remoteEARDirectory|Location of the EAR files in case of remote deployments. Default is same as multiEARLocation.|No|
-|parentLastClassLoaderMode|True or false, If application Parent Last classloader mode must be set to true or false.|No|
-|failOnError|True or false, If set to true AuraDeployLite will ignore any failures. Defaults to false. True is not recommended for Production environment.|No|
-|startingWeight|Integer value to determine the starting weight of the application. Value specified in the deploydata for an application overrides this value if specified.|No|
-|startClusterBeforeDeploy|True or false, Will start the cluster before application deployment if not started. Default is false.|No|
-|reStartClusterAfterDeploy|True or false, Will restart the cluster after application deployment. Default is false.|No|
-|operation|install, uninstall or reinstall. Default is reinstall.|No|
-
 
