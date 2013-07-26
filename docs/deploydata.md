@@ -11,7 +11,7 @@ DeployData XML is used to configure EAR file while deploying. Configuration like
 You can download an example sample deploydata.xml from [here] (/docs/deploydata.xml).
 Below is the description of deploydata tags
 
-### deploy and deployversion tag:
+ deploy and deployversion tag
 
 deploy tag is root tag and all the deploydata files must have deploy tag as root tag.
 
