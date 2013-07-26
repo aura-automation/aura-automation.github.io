@@ -36,8 +36,14 @@ startClusterBeforeDeploy|True or false, Will start the cluster before applicatio
 reStartClusterAfterDeploy|True or false, Will restart the cluster after application deployment. Default is false.|No|
 operation|install, uninstall or reinstall. Default is reinstall.|No|
 
-## AuraProcessEAR Task
-If there are certain configurations in the applications for e.g. Security role mappings, JNDI bindings then those configurations can be defined in Deploydata.xml. Deploydata.xml can be supplied for each or subset of EAR files, this file will contain the configurations of the EAR file. Generally this file must not differ between environments, but if there is a requirement to support changes between the environments then tokensations can be used. In case of multi ear; AuraProcessEAR using maming conventions to find the deploydata in the deploydata directory mentioned in the ANT task. Naming conventioned is <EARFileName>-deploydata.xml.
-If there are any Application configuration that are not supported by deloydata.xml format then you can use auraconfiglite to apply the configuration post deployment.
+### AuraProcessEAR Task
+If there are certain configurations in the applications for e.g. Security role mappings, JNDI bindings then those configurations can 
+be defined in Deploydata.xml. Deploydata.xml can be supplied for each or subset of EAR files, this file 
+will contain the configurations of the EAR file. Generally this file must not differ between environments, but if
+ there is a requirement to support changes between the environments then tokensations can be used. In case
+ of multi ear; AuraProcessEAR using maming conventions to find the deploydata in the deploydata
+ directory mentioned in the ANT task. Naming conventioned is <code>[EARFileName]-deploydata.xml </code>.
+If there are any Application configuration that are not supported by deloydata.xml format then you
+ can use auraconfiglite to apply the configuration post deployment.
 
 
