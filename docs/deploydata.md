@@ -11,7 +11,7 @@ DeployData XML is used to configure EAR file while deploying. Configuration like
 You can download an example sample deploydata.xml from [here] (deploydata.xml).
 Below is the description of deploydata tags
 
-**deploy and deployversion tag:**
+### deploy and deployversion tag:
 
 deploy tag is root tag and all the deploydata files must have deploy tag as root tag.
 
@@ -25,7 +25,7 @@ Example
 
 <code/>
 
-**startWeight:**
+### startWeight:
 
 startWeight tag is used to configure the weight of the application in shared environment.
 
@@ -33,7 +33,7 @@ Example
 <code>
 <startingWeight value="1"/>
 <code/>
-**libraries:**
+###libraries:
 
 libraries tag is used to include the shared library for the application. Slick-Deploy maps the shared library to the application at application level.
 
@@ -46,7 +46,7 @@ Example
 </libraries>
 <code/>
 
-**generateEJBDeployCode:**
+### generateEJBDeployCode:
 
 If you need to generate the deployed code of EJB while deploying the application then set value attribute of this tag true.
 
@@ -55,7 +55,7 @@ Example
     <generateEJBDeployCode value="true"/> 
 <code/>
 
-**role-binding and special-binding:**
+### role-binding and special-binding:
 
 role-binding tag groups the role to group mapping tags. Sub tags of role-binding tag are role tags. Value of the attribute name of role tag is the name of the role in the application being deployed. Sub tags of the role tag are the group tags to which this role should be mapped while deploying the application. Value of the attribute name of group tag is the name of the group to which the role is bound when the application is deployed.
 
@@ -92,7 +92,7 @@ Example
 </special-binding>
 <code/>
 
-**run-as role-binding:**
+### run-as role-binding:
 
 Run as role-binding tag maps role to user and password. Sub tags of run-as-binding tag are role tags. role tag must have attributes name, username and password.
 
@@ -109,7 +109,7 @@ Example
 </run-as-binding>
 <code/>
 
-**ejb-module:**
+### ejb-module:
 
 Each EJB module in the application should have corresponding ejb-module tag in the deploydata.xml. ejb-module tag groups the configuration for the ejb-module. Name attribute of the ejb-module tag has value as name of the ejb jar file. Second attribute of ejb-module tag is module-ds-bnd. Value of module-ds-bnd is the jndi name of the datasource for the module.
 
@@ -117,19 +117,19 @@ NOTE: The value of the name attribute is name of the jar file and not name of th
 
 There can be 2 different types of sub tags of the ejb-module enterprise-bean-binding and message-bean-binding. If the EJB is Message Driven bean then use message-bean-binding and for any other type of EJB use enterprise-bean-binding.
 
-**enterprise-bean-binding** is tag for EJBs (except MDBs) in the EJB module. Total number of enterprise-bean-binding in each module in deploydata.xml must equal the number of EJBs in the module in the application. Value of name attribute is name of the EJB and value of jndi-name attribute is the JNDI name of the EJB.
+### enterprise-bean-binding is tag for EJBs (except MDBs) in the EJB module. Total number of enterprise-bean-binding in each module in deploydata.xml must equal the number of EJBs in the module in the application. Value of name attribute is name of the EJB and value of jndi-name attribute is the JNDI name of the EJB.
 
-**ejb-ref-binding** sub tag is for the ejb-refs of this EJB. Value of the name attribute is the name of the EJB reference and value of jndi-name-link attribute is the JNDI name mapping.
+### ejb-ref-binding sub tag is for the ejb-refs of this EJB. Value of the name attribute is the name of the EJB reference and value of jndi-name-link attribute is the JNDI name mapping.
 
-**resource-ref-binding** sub tag is for the res-ref for this EJB. Value of the name attribute is the name of the Resource reference and value of jndi-name-link attribute is the JNDI name mapping.
+### resource-ref-binding sub tag is for the res-ref for this EJB. Value of the name attribute is the name of the Resource reference and value of jndi-name-link attribute is the JNDI name mapping.
 
-**resource-env-binding** sub tag is for the res-env for this EJB. Value of the name attribute is the name of the Resource environment and value of jndi-name-link attribute is the JNDI name mapping.
+### resource-env-binding sub tag is for the res-env for this EJB. Value of the name attribute is the name of the Resource environment and value of jndi-name-link attribute is the JNDI name mapping.
 
-**cmp2-ds-binding** tag is for the CMP beans. Value of the jndi-name-link should be the JNDI name of the datasource which is default datasource for this CMP EJB.
+### cmp2-ds-binding tag is for the CMP beans. Value of the jndi-name-link should be the JNDI name of the datasource which is default datasource for this CMP EJB.
 
-**message-bean-binding**is tag for MDB EJBs in the EJB module. Total number of message-bean-binding in each module in deploydata.xml must equal the number of MDB EJBs in the module in the application. Value of name attribute is name of the EJB and value of messagelistener is the message listener name that must be assigned to this EJB.
+### message-bean-binding is tag for MDB EJBs in the EJB module. Total number of message-bean-binding in each module in deploydata.xml must equal the number of MDB EJBs in the module in the application. Value of name attribute is name of the EJB and value of messagelistener is the message listener name that must be assigned to this EJB.
 
-**ejb-ref-binding**, resource-ref-binding and resource-env-binding are valid sub tags for the message-bean-binding. Details for these sub tags are same as above.
+### ejb-ref-binding, resource-ref-binding and resource-env-binding are valid sub tags for the message-bean-binding. Details for these sub tags are same as above.
 
 Example
 <code>
@@ -180,7 +180,7 @@ Example
 </ejb-module>
 <code/>
 
-**web-module:**
+### web-module:
 
 Each web module in the application should have corresponding web-module tag in the deploydata.xml. web-module tag groups the configuration for the web-module. Name attribute's value is the war file name. virtualhost attributes value is the virtual host that web module is bound to.
 
