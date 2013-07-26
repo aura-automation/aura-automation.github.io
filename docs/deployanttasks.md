@@ -36,17 +36,3 @@ startClusterBeforeDeploy|True or false, Will start the cluster before applicatio
 reStartClusterAfterDeploy|True or false, Will restart the cluster after application deployment. Default is false.|No|
 operation|install, uninstall or reinstall. Default is reinstall.|No|
 
-## AuraProcessEAR Task
-If there are certain configurations in the applications for e.g. Security role mappings, JNDI bindings then those configurations can be defined in Deploydata.xml. Deploydata.xml can be supplied for each or subset of EAR files, this file will contain the configurations of the EAR file. Generally this file must not differ between environments, but if there is a requirement to support changes between the environments then tokensations can be used. In case of multi ear; AuraProcessEAR using maming conventions to find the deploydata in the deploydata directory mentioned in the ANT task. Naming conventioned is <EARFileName>-deploydata.xml.
-If there are any Application configuration that are not supported by deloydata.xml format then you can use auraconfiglite to apply the configuration post deployment.
-
-Attribute | Description | Required |
-----------|-------------|----------|
-earFileLocation|Enter the full path of the EAR file location|No|
-deployDataLocation|Enter the full path of the Deploydata file location|No|
-isMultiEAR|boolean, true or false if the deployment type is multi ear|Yes|
-multiEARLocation|Location of Directory containning EAR files |No|
-multiEARDeployData|Location of Directory containning deploydata files |No|
-VirtualHost|Typically user will supply this information in a deploydata file. Use this when  only virtual host mappping configuration is to be changed and same virtual host is to applied to all the application, thus no need to create deplydata files.|No|
-defaultValues|Boolean. default is false.deploydata file should define all the configurations in the EAR. In the scenario where only a subset of configurations is to be enforced during the deployment then set defaultValues to true. Now processEAR task will accept the default values supplied in the EAR files. |No|
-
