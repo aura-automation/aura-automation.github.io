@@ -9,7 +9,19 @@ permalink: /docs/deploydata/
 DeployData XML is used to configure EAR file while deploying. Configuration like virtual host, ejb bindings etc can be managed using deploydata.
  
 You can download an example sample deploydata.xml from [here] (/docs/deploydata.xml).
-
 Below is the description of deploydata tags
 
+### deploy and deployversion tag:
+
+deploy tag is root tag and all the deploydata files must have deploy tag as root tag.
+
+deployversion tag is used to get the version of deploydata.xml format. Current release of Slick-Deploy supports 1.1.0 version of deploydata.xml.
+
+Example
+<code>
+<deploy>
+
+<deployversion value="1.0.0" />
+
+<code/>
 
