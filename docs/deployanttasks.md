@@ -2,7 +2,7 @@
 layout: docs
 title: Deploy ANT Tasks
 prev_section: configanttasks
-next_section: commonanttasks
+next_section: posts
 permalink: /docs/deployanttasks/
 ---
 
