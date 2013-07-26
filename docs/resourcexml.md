@@ -20,6 +20,7 @@ will be processed by Aura as a configuration data file. Root node for this file 
  </resources>
 {% endhighlight %}
 
+
 Between these resources tag, you can set Cell with name being variables. 
 Other attribute values like database name can tokenised and replaced with variable as required. 
 Syntax of tokens is {% raw %}${{CellName}}{% endraw %}. 
