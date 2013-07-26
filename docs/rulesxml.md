@@ -3,7 +3,7 @@ layout: docs
 title: Rules XML
 prev_section: deploydata
 next_section: posts
-permalink: /docs/resourcexml/
+permalink: /docs/rulesxml/
 ---
 
 AuraConfigLite supports rules. Rules are defined in a xml file. Rule can be  used to restrict or control the changes to resources type. 
@@ -14,14 +14,14 @@ For e.g.
 
 {% highlight xml %}
 
-    <resources-metadata> 
-	<ConfigObject type="Cell" editable="none"> 
-		<ConfigObject type="Node" editable="none">   
-			<ConfigObject type="Server" editable="none">   
-			</ConfigObject>   
-		</ConfigObject>    
-	</ConfigObject>   
-    </resources-metadata>  
+<resources-metadata> 
+<ConfigObject type="Cell" editable="none"> 
+	<ConfigObject type="Node" editable="none">   
+		<ConfigObject type="Server" editable="none">   
+		</ConfigObject>   
+	</ConfigObject>    
+</ConfigObject>   
+</resources-metadata>  
 {% endhighlight %}
 
 Rule can be applied at the Resource level or at attribute level.
@@ -42,18 +42,18 @@ At attribute level, following rules can be applied editable="false", min, max
 
 
 {% highlight xml %}							
-    <resources-metadata>
-	<ConfigObject type="Cell" editable="none">
-		<ConfigObject type="ServerCluster" editable="none">
-			<ConfigObject type="ClusterMemeber" editable="update">
-				<attributes>
-					<attribute name="name" editable="false" />
-					<attribute name="weight" min="2"  max="4"/>
-				</attributes>
-			</ConfigObject>
-		</ConfigObject> 
-	</ConfigObject>
-    </resources-metadata>
+<resources-metadata>
+<ConfigObject type="Cell" editable="none">
+	<ConfigObject type="ServerCluster" editable="none">
+		<ConfigObject type="ClusterMember" editable="update">
+			<attributes>
+				<attribute name="name" editable="false" />
+				<attribute name="weight" min="2"  max="4"/>
+			</attributes>
+		</ConfigObject>
+	</ConfigObject> 
+</ConfigObject>
+</resources-metadata>
 {% endhighlight %}
 							
 In the quickstart version rule.xml is located in resources/rule folder. User can create different rule.xml for different user groups in the organisation. For e.g. developerRule.xml, administratorRule.xml, monitorRule.xml etc
