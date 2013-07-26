@@ -5,6 +5,7 @@ prev_section: configanttasks
 next_section: posts
 permalink: /docs/deployanttasks/
 ---
+### AuraDeployLite Task
 
 This task is used to deploy the EAR or WAR file to target cluster or server. 
 The task also supports multi ear deploy. 
