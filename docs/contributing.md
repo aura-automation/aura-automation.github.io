@@ -6,7 +6,7 @@ next_section: troubleshooting
 permalink: /docs/contributing/
 ---
 
-So you've got an awesome idea to throw into Jekyll. Great! Please keep the
+So you would like to contribute. Great! Please keep the
 following in mind:
 
 * If you're creating a small fix or patch to an existing feature, just a simple
