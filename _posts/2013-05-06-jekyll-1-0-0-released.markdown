@@ -1,8 +1,8 @@
 ---
 layout: news_item
-title: "Jekyll 1.0.0 Released"
-date: "2013-05-06 02:12:52 +0200"
-author: parkr
+title: "Aura 4.0.0 Released"
+date: "2013-07-31 00:18:52 +0100"
+author: aura-automation
 version: 1.0.0
 categories: [release]
 ---
