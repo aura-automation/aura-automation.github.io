@@ -7,8 +7,8 @@ version: 1.0.0
 categories: [release]
 ---
 
-Hey! After many months of hard work by Jekyll's contributors, we're excited
-to announce the first major release of the project in a long while. v1.0.0 is
-finally here! While the list of improvements
+Hey! After many months of hard work, I'm excited
+to announce the first major release of the project. v1.0.4 is
+finally here! 
 
 
