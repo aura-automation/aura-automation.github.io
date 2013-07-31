@@ -4,7 +4,7 @@ category : blogs
 tagline: "Automate Configuration"
 tags : [automation, websphere]
 ---
-{% include JB/setup %}
+
 
 This introduction to Aura will outline defination of Java Container Configuraion and how can you can use Aura to automate this configuration.
 
