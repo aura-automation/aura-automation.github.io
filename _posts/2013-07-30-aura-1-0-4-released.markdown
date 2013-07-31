@@ -3,7 +3,7 @@ layout: news_item
 title: "Aura 1.4.0 Released"
 date: "2013-07-30 00:18:52 +0100"
 author: aura-automation
-version: 1.0.0
+version: 1.4.0
 categories: [release]
 ---
 
