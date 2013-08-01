@@ -55,5 +55,30 @@ Aura represents WebSphere Configuration, such as DataSource, JMS Queues, JVM, as
 
 Relationship between the resources is captured using the XML tree hierarchy. Values in Resource XML files are tokenised to make these files environment agnostic.
 
-Aura is packaged as ANT tasks and comes with a quick start ANT script to enable quick set up. This can be extended and built up to integrate to your binary repository.
+Aura is available as CLI that can be used by developers locally or can be intergated with exisiting automation scripts.
+
+Aura is also packaged as ANT tasks. This can be extended and built up to integrate to your binary repository.
+
+
+### What is Aura and Why Should I care?
+
+Aura is very minimalistic and very efficient.
+The most important thing to realize about Aura  is that it creates a simple xml representation of your config without requiring heavy tools.
+Traditional/Commercial tools require a database, server-side code, UI which is self defeating when you want rapid time to market.
+
+Therefore if you like to keep things simple and you prefer the command-line over an admin panel UI then give Aura a try.
+
+**Developers like Aura because we can write configuration like we write code:**
+
+- Ability to write configuration in XML in your favorite text-editor.
+- Ability to preview changes against environments.
+- No release notes or manaul steps required.
+- Ability to extract configuration from know good envirnment.
+- Ability to version configuration with source code.
+- Ability to use rules to block certain configuration types.
+- Easy to read reports.
+
+**Thank you** for reading this far.
+
+
 
