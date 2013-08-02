@@ -13,6 +13,9 @@ For application deployment PetClinic application has be packaged
 $ aura extract [-Dnoprompt=true -Denv.name=(env name) -Dscope=(cell,server,cluster,node) -Dresource.name=(resource name)]
 # => Reports and ResourceXML files will be generated in AURA_REPO/resources directory. Run in noprompt mode for silent processes.
 
+$ aura extractAll [-Dnoprompt=true -Denv.name=(env name) -Dscope=(cell,server,cluster,node) ]
+# => Extract all supported configuration resources from all or requested scope. Reports and ResourceXML files will be generated in AURA_REPO/resources directory. Run in noprompt mode for silent processes.
+
 $ aura preview [-Dnoprompt=true -Denv.name=(env name)]
 # => Run this from location containing config and properties folder. 
 All ResourceXML in config directory will be processed and reports will be generated in AURA_REPO/resources directory
@@ -20,10 +23,9 @@ All ResourceXML in config directory will be processed and reports will be genera
 $ aura commit  [-Dnoprompt=true -Denv.name=(env name)]
 # => Run this from location containing config and properties folder. 
 All ResourceXML in config directory will be processed and reports will be generated in AURA_REPO/resources directory
+
 {% endhighlight %}
 
-$ aura extractAll [-Dnoprompt=true -Denv.name=(env name) -Dscope=(cell,server,cluster,node) ]
-# => Reports and ResourceXML files will be generated in AURA_REPO/resources directory. Run in noprompt mode for silent processes.
 
 
 QuickStart package provides dummy configuration that you can compare 
