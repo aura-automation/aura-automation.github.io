@@ -22,9 +22,6 @@ $ aura commit  [-Dnoprompt=true -Denv.name=(env name)]
 All ResourceXML in config directory will be processed and reports will be generated in AURA_REPO/resources directory
 {% endhighlight %}
 
-$ aura extractAll [-Dnoprompt=true -Denv.name=(env name) -Dscope=(cell,server,cluster,node) ]
-# => Reports and ResourceXML files will be generated in AURA_REPO/resources directory. Run in noprompt mode for silent processes.
-
 
 QuickStart package provides dummy configuration that you can compare 
 This will give you a flavour of what to expect when you automate your application configuration and deployment using Aura
