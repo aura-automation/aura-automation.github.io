@@ -51,8 +51,8 @@ $ aura startApp [-Dnoprompt=true -Denv.name=(env name)]
 $ aura stopApp [-Dnoprompt=true -Denv.name=(env name)]
 # =>  Stop all application matching the ear file name in ear dir
 
-$ aura deployApp [-Dnoprompt=true -Denv.name=(env name) -Dcluster.name=(cluster to deploy) -Dserver.name=(server to deploy)]
-# =>  deploy all application matching the ear file name in ear dir
+$ aura deployApp [-Dnoprompt=true -Denv.name=(env name) -Dcluster.name=(cluster to deploy) -Dserver.name=(server to deploy) -Dnode.name=(node of the server) -Dwebserver.name=(webserver for webmodule)]
+# =>  deploy all application matching the ear file name in ear dir; cluster or server & node must be specified, webserver is optional
 
 $ aura exportApp [-Dnoprompt=true -Denv.name=(env name)]
 # =>  Export all application matching the ear file name in ear dir
