@@ -45,6 +45,7 @@ $ aura exportApp [-Dnoprompt=true -Denv.name=(env name)]
 
 Enable reporting servers  
 
+{% highlight bash %}
 $ aura serve [-Dport=(8080)]
-# =>  Starts all server allowing user to browse the extract, preview configuration reports and logs
-
+# =>  Start aura reporting server
+{% endhighlight %}
