@@ -8,18 +8,15 @@ permalink: /docs/home/
 This site aims to be a comprehensive guide to Aura. We’ll cover topics such
 as getting your Aura Installed, creating and managing your configuration,
 extracting configuratoin from know WebSphere environment, deploying EAR/WAR to various
-environments, and give you some advice on participating in the future
-development of Aura itself.
+environments.
 
 ## So what is Aura, exactly?
 
-Aura is application deployment and configuration automation solution for WebSphere Application Server. Aura enables user to define application’s 
-WebSphere configuration as code in easy to read XML files called Resource.xml. User can extract application configuration from a working 
-environment using extract feature. Extracted configuration can be tokenised and applied or previewed to test and production environments. 
+Aura is application deployment and configuration automation solution for WebSphere Application Server. Aura enables user to define application
+ configuration as code in easy to read XML files called Resource.xml. User can extract application configuration from an 
+environment using extract feature. This extracted configuration can be tokenised and applied or previewed to test and production environments. 
 Application code/binaries and Configuration can be versioned and deployed automatically thus eliminating time consuming and 
 error prone manual steps. User friendly reports of the configuration changes allows operations teams to report the changes applied.
-
-Aura has 2 modules auraconfiglite (WebSphere configuration automation) and auradeploylite (deployment automation) as command line utility and ANT tasks.
 
 Aura is free open source offering that uses data driven automation removing the need to write scripts whilst retaining your capability to define 
 your WebSphere configuration.
