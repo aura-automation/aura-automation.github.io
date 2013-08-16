@@ -7,13 +7,14 @@ permalink: /docs/installation/
 ---
 
 Getting Aura installed and ready-to-go should only take a few minutes. You can install Aura on same host where WebSphere 
-to be managed is installed or on some a central host from where you can manage all your WebSphere hosts.
+to be managed is installed or on a central host from where you can manage all your WebSphere hosts.
 
 ### Requirements
 
-Installing Aura on a central host will required WebSphere thin client jars (looking at size of the jars it is not that thin!), security property files and 
-key stores
+Installing Aura on a central host will required 
 
+- WebSphere thin client jars (looking at size of the jars it is not that thin!), 
+- Security property files and key stores
 - IBM JDK copied or installed; 1.6 or above
 
 <div class="note info">
@@ -25,15 +26,15 @@ key stores
 
 ## Install 
 
-1: Unzip/Untar the download in location
+1: Unzip/Untar the download 
 
 2: Set JAVA_HOME to location of IBM JDK
 
 3: Set AURA_HOME to location Aura installation location
 
-4: Optionally set AURA_REPO, default is directory ".aura_repo" in users home directory
+4: Optionally set AURA_REPO, default is ".aura_repo" in users home directory
 
-## Install WAS Plugin
+## Install WAS Libraries
 
 1: Run below the command and follow the instructions
 
