@@ -6,21 +6,33 @@ next_section: configuration
 permalink: /docs/structure/
 ---
 
-Aura is, at its core, a text deployment and configuration automation engine for WebSphere. 
-The concept is to define the configuration as code in XML and version control with application code.
-Throughout that Resource xml are tokenised thus can be applied to any environment. Configuration can be 
-previewed and compared so that you can make an informed judgment.
+Aura is, at its core, a deployment and configuration automation engine with currect support for WebSphere. 
+The concept is to define the configuration as code in XML and version control it with application code.
+Throughout that Resource xml are tokenised thus can be applied to any environment.
 
 
 Aura Working directory: This is structure in your source code tree, Run aura commands from cn
 
 {% highlight bash %}
+├── PetClinic
+|   ├── pom.xml
+|   ├── aura.xml
+|   ├── src
+.
+.
 ├── _config
 |   ├── resources
 |   |	├── ..Resource.xml
 |   |	├── ..Resource.xml
 |   ├── properties
-└── └── └── [env.name].properties
+|   |	├── [env.name].properties
+|   ├── ear
+|   |	├── PetClinic.ear
+|   |	├── ...ear
+|   ├──	├── DeployData
+|   |	|   ├── PetClinic-deploydata.xml
+└── └── └── └── ..-deploydata.xml
+ 
 {% endhighlight %}
 
 
@@ -35,6 +47,17 @@ An overview of what each of these does:
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>
+        <p><code>aura.xml</code></p>
+      </td>
+      <td>
+        <p>
+
+	   Optional file to specify the location directoies.  	
+        </p>
+      </td>
+    </tr>
     <tr>
       <td>
         <p><code>resources</code></p>
@@ -87,6 +110,7 @@ A basic Aura install looks like this
 |   ├── extractTemplates
 |   	├── cell
 |   	├── cluster
+|   	├── node
 |   	└── server
 ├── _var
 |   ├── common
