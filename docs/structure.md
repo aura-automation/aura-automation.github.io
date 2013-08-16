@@ -2,7 +2,7 @@
 layout: docs
 title: Directory structure
 prev_section: usage
-next_section: configuration
+next_section: auraxml
 permalink: /docs/structure/
 ---
 
