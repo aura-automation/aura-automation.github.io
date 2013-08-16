@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Resource XML
-prev_section: structure
+prev_section: auraxml
 next_section: properties
 permalink: /docs/resourcexml/
 ---
