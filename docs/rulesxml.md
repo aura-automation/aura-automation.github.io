@@ -57,6 +57,3 @@ At attribute level, following rules can be applied editable="false", min, max
 </resources-metadata>
 {% endhighlight %}
 							
-In the quickstart version rule.xml is located in resources/rule folder. User can create different rule.xml for different user groups in the organisation. For e.g. developerRule.xml, administratorRule.xml, monitorRule.xml etc
-
-Either create seperate bat/sh file for each user type or you can dynamically load the rule.xml based on user type in script. 
