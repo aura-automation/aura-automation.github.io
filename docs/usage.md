@@ -6,8 +6,7 @@ next_section: structure
 permalink: /docs/usage/
 ---
 
-QuickStart package provides extract templates for many commonly used WebSphere Configuration items. 
-For application deployment PetClinic application has be packaged
+Below are the commands to manage Container configurations.  
  
 {% highlight bash %}
 $ aura extract [-Dnoprompt=true -Denv.name=(env name) -Dscope=(cell,server,cluster,node) -Dresource.name=(resource name)]
@@ -26,22 +25,7 @@ All ResourceXML in config directory will be processed and reports will be genera
 
 {% endhighlight %}
 
-
-
-QuickStart package provides dummy configuration that you can compare 
-This will give you a flavour of what to expect when you automate your application configuration and deployment using Aura
-
-{% highlight bash %}
-
-$ aura compareFiles
-# =>  Resource xml files in 
-workdir/Default/config and workdir/archive/DefaultApp/config/ are compared
-Reports will be generated in resources/reports/<datetime> folder. 
-
-{% endhighlight %}
-
 Commands to manage application 
-
 
 {% highlight bash %}
 
@@ -59,4 +43,8 @@ $ aura exportApp [-Dnoprompt=true -Denv.name=(env name)]
 
 {% endhighlight %}
 
+Enable reporting servers  
+
+$ aura serve [-Dport=(8080)]
+# =>  Starts all server allowing user to browse the extract, preview configuration reports and logs
 
