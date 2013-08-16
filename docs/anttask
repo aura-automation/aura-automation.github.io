@@ -1,0 +1,14 @@
+---
+layout: docs
+title: ANT Task
+prev_section: rulesxml
+next_section: configanttasks
+permalink: /docs/anttasks/
+---
+
+### Ant Task
+
+aura command line as explained in the usage page should be able to suffcient in most of the cases. If there is a requirement to leverage more of 
+aura the you can use ANT tasks as expained below. 
+
+Many orgnisation have investment in automation scripts and using the tasks user can integrated aura in existing ANT automation scripts. 

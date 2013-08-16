@@ -2,7 +2,7 @@
 layout: docs
 title: Rules XML
 prev_section: deploydata
-next_section: posts
+next_section: configanttasks
 permalink: /docs/rulesxml/
 ---
 
