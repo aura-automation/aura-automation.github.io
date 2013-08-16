@@ -2,7 +2,6 @@
 layout: docs
 title: Misc ANT Tasks
 prev_section: deployanttasks
-next_section: posts
 permalink: /docs/miscanttasks/
 ---
 ### AuraSyncNode Task
