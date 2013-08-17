@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: news_item 
 title: "WebSphere Application Configuration Automation"
 date: "2013-07-30 00:18:52 +0100"
 author: aura-automation
