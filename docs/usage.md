@@ -43,9 +43,3 @@ $ aura exportApp [-Dnoprompt=true -Dtarget.name=(env name)]
 
 {% endhighlight %}
 
-Enable reporting servers  
-
-{% highlight bash %}
-$ aura serve [-Dport=(8080)]
-# =>  Start aura reporting server
-{% endhighlight %}
