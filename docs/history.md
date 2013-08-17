@@ -2,10 +2,10 @@
 layout: docs
 title: History
 permalink: /docs/history/
-prev_section: contributing
+
 ---
 
-## 4.0.0 / 2013-07-30
+## 1.0.4 / 2013-08-17
 
 ### 1st Release
 - Birthday!
