@@ -12,6 +12,7 @@ The aura XML is where user can configure aura. Location of config, ear etc can b
 
 <aura>
 	<aura-was-config>
+		<output-file-base-location>output</output-file-base-location>
 		<properties>config/properties</properties>
 		<resource-set>
 			<resource>config/resources-dev</resource>
